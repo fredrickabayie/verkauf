@@ -1,3 +1,12 @@
+<?php
+$msie = strpos ( $_SERVER ["HTTP_USER_AGENT"], 'MSIE' ) > 0;
+if ( !$msie ) {
+  header ( "Content-Type: application/xhtml+xml; charset=UTF-8" );
+} else {
+  header ("Content-Type: text/html; charset=UTF-8");
+}
+?>
+
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN"
 "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
 <!--
@@ -20,7 +29,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -32,17 +41,98 @@
         <title>Verkauf</title>
     </head>
     <body>
+        
         <div class="app">
-            <h1>Verkauf</h1>
+            
+            <div class="row">
+                
+                <form class="col s12">
+                    
+                    <div class="input-field col s12 m6 l6">
+                        <input id="productName" type="text" class="validate">
+                        <label for="productName">Product Name</label>
+                    </div>
+                    
+                    <div class="input-field col s12 m6 l6">
+                        <input id="productQuantity" type="text" class="validate">
+                        <label for="productQuantity">Product Quantity</label>
+                    </div>
+                    
+                    <div class="input-field col s12 m6 l6">
+                        <input id="productPrice" type="text" class="validate">
+                        <label for="productPrice">Product Price</label>
+                    </div>
+                    
+                    <div class="input-field col s5 m6 l6">
+                        <input id="productBarcode" type="text" class="validate">
+                        <label for="productBarcode">Product Barcode</label>
+                        <span><a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Stuff</a></span>
+                    </div>
+                    
+                </form>
+            
+            </div>
+            
+            <h1>verKauf</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting..</p>
                 <p class="event received">Device is Ready</p>
                 <a id="btn" class="waves-effect waves-light btn">Stuff</a>
             </div>
         </div>
+        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="spec/lib/jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="spec/lib/materialize/js/materialize.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+          <label for="disabled">Disabled</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+
