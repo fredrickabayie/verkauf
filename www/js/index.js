@@ -17,16 +17,32 @@
  * under the License.
  */
 
-/*global console*/
+/*global console, $, alert, cordova*/
 
 
-$(function(){
-   $(".btn").click(function()   {
-      alert("Button Clicked");
-       console.log("Button Clicked");
-   }); 
+$(function () {
+    "use strict";
+    $("#addproduct_save_btn").click(function () {
+        alert("Button Clicked");
+        console.log("Button Clicked");
+    });
 });
 
+
+$(function () {
+    "use strict";
+    $("#addproduct_barcodescan_btn").click(function () {
+        cordova.plugins.barcodeScanner.scan(
+            function (result) {
+                $("#productBarcode").val(result.text);
+//                    "Format: " + result.format + "\n" +
+            },
+            function (error) {
+                alert("Scanning failed: " + error);
+            }
+        );
+    });
+});
 
 
 

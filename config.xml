@@ -7,6 +7,9 @@
     <author email="fredrick.abayie@ashesi.edu.gh" href="https://github.com/fredrickabayie/verkauf">
         Fredrick Abayie
     </author>
+    
+    <gap:plugin name="net.roughshod.plugins.barcodescanner" version="3.0.0" />
+    
     <content src="index.html" />
     
     <allow-intent href="http://*/*" />
