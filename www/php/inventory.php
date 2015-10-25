@@ -3,7 +3,7 @@ if (isset($_GET['cmd']))
 {
     $cmd = $_REQUEST['cmd'];
     
-    switch (strtolower($cmd))
+    switch ($cmd)
     {
         case 'addproduct_to_inventory':
             addproduct_to_inventory ( );
@@ -32,22 +32,26 @@ if (isset($_GET['cmd']))
  *Function to add a new product to the database
  */
 function addproduct_to_inventory ( ) {
-    include_once dirname(__FILE__) . '/queries.php';
     
-    $productName = $_REQUEST['productName'];
-    $productQuantity = $_REQUEST['productQuantity'];
-    $productPrice = $_REQUEST['productPrice'];
-    $productBarcode = $_REQUEST['productBarcode'];
-    
-    $addproduct_to_inventory = new Queries();
-    
-    if ($addproduct_to_inventory->addproduct_to_inventory_query($productName, $productQuantity, $productPrice, $productBarcode))
+    if (isset($_REQUEST['productName'])&&isset($_REQUEST['productQuantity'])&&isset($_REQUEST['productPrice'])&&isset($_REQUEST['productBarcode']))
     {
-        echo '';
-    }
-    else
-    {
-        echo "Not added";
+        include_once dirname(__FILE__) . '/queries.php';
+
+        $productName = $_REQUEST['productName'];
+        $productQuantity = $_REQUEST['productQuantity'];
+        $productPrice = $_REQUEST['productPrice'];
+        $productBarcode = $_REQUEST['productBarcode'];
+
+        $addproduct_to_inventory = new Queries();
+
+        if ($addproduct_to_inventory->addproduct_to_inventory_query($productName, $productQuantity, $productPrice, $productBarcode))
+        {
+            echo "added";
+        }
+        else
+        {
+            echo "Not added";
+        }
     }
 }
 
