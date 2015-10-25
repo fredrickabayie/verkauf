@@ -42,9 +42,9 @@ if ( strpos ( strtolower ( $_SERVER ['HTTP_USER_AGENT'] ), 'windows' ) > 0 )
 
 if ( $mobile_browser > 0 )
 {
-    echo 'Mobile Device';
-    header("location: jquerypage.html");
+//    echo 'Mobile Device';
+//    header("location: jquerypage.html");
 }   else    {
-    echo 'Desktop Device';
-    header("location: desktoppage.html");
+//    echo 'Desktop Device';
+//    header("location: desktoppage.html");
 }

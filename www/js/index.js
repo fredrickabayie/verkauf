@@ -19,16 +19,43 @@
 
 /*global console, $, alert, cordova*/
 
+function sendRequest(u) {
+    "use strict";
+    var obj, result;
+    obj = $.ajax({url: u, async: false});
+    result = $.parseJSON(obj.resoponseText);
+    return result;
+}
 
+
+//function to add product to the inventory
 $(function () {
     "use strict";
     $("#addproduct_save_btn").click(function () {
-        alert("Button Clicked");
-        console.log("Button Clicked");
+        
+        var productName, productQuantity, productPrice, productBarcode, messenger, url;
+        
+        productName = encodeURI(document.getElementById("productName").value);
+        productQuantity = encodeURI(document.getElementById("productQuantity").value);
+        productPrice = encodeURI(document.getElementById("productPrice").value);
+        productBarcode = encodeURI(document.getElementById("productBarcode").value);
+        
+        url = "http://localhost/mobile_web_2015/midsem/verkauf/www/php/inventory.php?addproduct_to_inventory&productName="+productName+"&productQuantity="+productQuantity+"&productPrice="+productPrice+"&productBarcode"+productBarcode;
+        console.log(url);
+        
+        messenger = sendRequest(url);
+        
+        if (messenger.status === 1) {
+            $("").text(messenger.status);
+        } else {
+            $("").text(messenger.status);
+            return false;
+        }
     });
 });
 
 
+//Function to handle the barcode scanner button
 $(function () {
     "use strict";
     $("#addproduct_barcodescan_btn").click(function () {
