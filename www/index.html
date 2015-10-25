@@ -1,3 +1,4 @@
+<!--
 <?php
 $msie = strpos ( $_SERVER ["HTTP_USER_AGENT"], 'MSIE' ) > 0;
 if ( !$msie ) {
@@ -6,6 +7,7 @@ if ( !$msie ) {
   header ("Content-Type: text/html; charset=UTF-8");
 }
 ?>
+-->
 
 <!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN"
 "http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
@@ -45,43 +47,31 @@ if ( !$msie ) {
         
         <div class="app">
             
-            <div class="row">
-                
-                <h1>verKauf</h1>
-                
-                <form class="col s12">
-                    
-                    <div class="input-field col s12 m6 l6">
-                        <input id="productName" type="text" class="validate" length="12" />
-                        <label for="productName">Product Name</label>
+             <nav style="">
+                <div class="nav" style="">
+                    <div class="navbar-fixed">
+                      <ul class="left">
+                            <li><a class="brand" style="color:#b83838">verKauf</a></li>
+                      </ul>
+                        <ul class="right">
+                            <li><a href="#!" class="brand" style="color:#b83838"><i class="fa fa-gears fa-lg"></i></a></li>
+                        </ul>
                     </div>
-                    
-                    <div class="input-field col s12 m6 l6">
-                        <input id="productQuantity" type="number" class="validate" />
-                        <label for="productQuantity">Product Quantity</label>
-                    </div>
-                    
-                    <div class="input-field col s12 m6 l6">
-                        <input id="productPrice" type="text" class="validate" />
-                        <label for="productPrice">Product Price</label>
-                    </div>
-                    
-                    <div class="file-field input-field col s12 m6 l6">
-                        <div class="btn" id="addproduct_barcodescan_btn">
-                            <span><i class="fa fa-camera-retro"></i></span>
-                        </div>
-                        
-                        <div class="file-path-wrapper">
-                            <input id="productBarcode" type="text" class="validate" placeholder="Product Barcode" disabled />
-                        </div>
-                    </div>
-                    
-                    <div class="input-field col s12 m6 l6">
-                        <a class="waves-effect waves-light btn" id="addproduct_save_btn" href="#">Save <i class="fa fa-cloud"></i></a>
-                    </div>
-                    
-                </form>
+                </div>
+              </nav>
             
+            <div class="row">
+                <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                    <a class="btn-floating btn-large red">
+                      <i class="fa fa-pencil"></i>
+                    </a>
+                    <ul>
+                      <li><a href="addproduct_page.html" class="btn-floating red"><i class="fa fa-plus"></i></i></a></li>
+                      <li><a class="btn-floating yellow darken-1"><i class="fa fa-cloud-upload"></i></a></li>
+                      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+                    </ul>
+                  </div>
             </div>
             
         </div>

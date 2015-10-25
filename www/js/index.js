@@ -40,7 +40,7 @@ $(function () {
         productPrice = encodeURI(document.getElementById("productPrice").value);
         productBarcode = encodeURI(document.getElementById("productBarcode").value);
         
-        url = "http://10.10.56.45/mobile_web_2015/midsem/verkauf/www/php/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode" + productBarcode;
+        url = "http://localhost/mobile_web_2015/midsem/verkauf/www/php/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode" + productBarcode;
         console.log(url);
         
         messenger = sendRequest(url);
