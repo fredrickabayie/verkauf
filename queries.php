@@ -1,5 +1,5 @@
 <?php
-include_once dirname(__FILE__) . '/adb.php';
+include_once 'adb.php';
 
 class Queries extends adb {
     
