@@ -22,13 +22,15 @@ body    {
 }
 
 #addproduct_save_container  {
+    position:fixed;right:0px;bottom:23px;padding-top:15px;margin-bottom:0;z-index:998;
+    background: black;
 /*    background-color: aqua;*/
-    position: relative;
-    top: 140px;
-    bottom: 0px;
-    margin-top: inherit;
-    padding: 0px;
-    margin: 0px;
+/*    position: relative;*/
+/*    top: 140px;*/
+/*    margin-top: inherit;*/
+/*    padding: 0px;*/
+/*    margin: 0px;*/
+/*    bottom: 45px;*/
 }
 
 .nav  {
@@ -47,11 +49,12 @@ nav {
 #addproduct_save_btn   {
     background: #b83838;
     color: #fff;
-    display: block;
+/*    display: block;*/
     padding: 0px 10px;
     line-height: 40px;
     height: 40px;
     text-decoration: none;
+/*    bottom: 45px;*/
 }
 
 .floating_edit_btn{
