@@ -45,8 +45,8 @@ $(function () {
         
         messenger = sendRequest(url);
         
-        if (messenger.status === 1) {
-            $("#message").text(messenger.status);
+        if (messenger.result === 1) {
+            $(".message").text(messenger.status);
         } else {
             $(".message").text(messenger.status);
             return false;
