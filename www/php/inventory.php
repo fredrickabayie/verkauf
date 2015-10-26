@@ -35,7 +35,7 @@ function addproduct_to_inventory ( ) {
     
     if (isset($_REQUEST['productName'])&&isset($_REQUEST['productQuantity'])&&isset($_REQUEST['productPrice'])&&isset($_REQUEST['productBarcode']))
     {
-        include_once dirname(__FILE__) . '/queries.php';
+        include_once 'queries.php';
 
         $productName = $_REQUEST['productName'];
         $productQuantity = $_REQUEST['productQuantity'];
@@ -61,7 +61,7 @@ function addproduct_to_inventory ( ) {
 *
 */
 function getlist_of_products_from_inventroy ( ) {
-    include_once dirname(__FILE__) . '/queries.php';
+    include_once 'queries.php';
     
     $getlist_of_products_from_inventroy = new Queries();
     

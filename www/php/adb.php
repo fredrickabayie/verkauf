@@ -19,7 +19,7 @@
      	* @return database handler
      	*/
      	function connect(){
-     		include_once dirname(__FILE__) . '/config.php';
+     		include_once 'config.php';
 
      		//connecting to mysql database
      		$this->conn = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die(mysql_error());
