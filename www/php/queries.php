@@ -25,9 +25,21 @@ class Queries extends adb {
     */
     function addproduct_to_inventory_query ( $productName, $productQuantity, $productPrice, $productBarcode ) 
     {
-        $insert_query = "INSERT INTO `pointofsale_midsem_verkauf_inventory` ( `productName`, `productQuantity`, `productPrice`, `productBarcode` ) VALUES ( '$productName', '$productQuantity', '$productPrice', '$productBarcode' )";
+        $insert_query = "INSERT INTO `mobileweb_pointofsale_midsem_verkauf_inventory` ( `productName`, `productQuantity`, `productPrice`, `productBarcode` ) VALUES ( '$productName', '$productQuantity', '$productPrice', '$productBarcode' )";
         
         return $this->query($insert_query);
+    }
+    
+    
+   /** 
+    *Function to get details of a student
+    *
+    */
+    function getlist_of_products_from_inventroy_query ( )
+    {
+        $productList_query = "SELECT * FROM `mobileweb_pointofsale_midsem_verkauf_inventory`";
+        
+        return $this->query($productList_query);
     }
     
     
@@ -53,19 +65,6 @@ class Queries extends adb {
         $select_query = "SELECT `Major` FROM `student_registration_system_sms` WHERE `studentID`='$studentID'";
         
         return $this->query($select_query);
-    }
-    
-    
-    
-    /** 
-    *Function to get details of a student
-    *
-    */
-    function get_details ( $studentID )
-    {
-        $details_query = "SELECT * FROM `student_registration_system_sms` WHERE `studentID`='$studentID'";
-        
-        return $this->query($details_query);
     }
     
 }

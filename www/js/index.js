@@ -40,15 +40,15 @@ $(function () {
         productPrice = encodeURI(document.getElementById("productPrice").value);
         productBarcode = encodeURI(document.getElementById("productBarcode").value);
         
-        url = "http://localhost/mobile_web_2015/midsem/verkauf/www/php/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode" + productBarcode;
+        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode" + productBarcode;
         console.log(url);
         
         messenger = sendRequest(url);
         
         if (messenger.status === 1) {
-            $("").text(messenger.status);
+            $("#message").text(messenger.status);
         } else {
-            $("").text(messenger.status);
+            $(".message").text(messenger.status);
             return false;
         }
     });

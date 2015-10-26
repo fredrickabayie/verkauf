@@ -9,8 +9,8 @@ if (isset($_GET['cmd']))
             addproduct_to_inventory ( );
             break;
             
-        case 'gpa':
-            check_gpa ( );
+        case 'getlist_of_products_from_inventroy':
+            getlist_of_products_from_inventroy ( );
             break;
             
         case 'major':
@@ -54,6 +54,72 @@ function addproduct_to_inventory ( ) {
         }
     }
 }
+
+
+/**
+*Function
+*
+*/
+function getlist_of_products_from_inventroy ( ) {
+    include_once dirname(__FILE__) . '/queries.php';
+    
+    $getlist_of_products_from_inventroy = new Queries();
+    
+    if ($getlist_of_products_from_inventroy->getlist_of_products_from_inventroy_query( ))
+    {
+        $row = $getlist_of_products_from_inventroy->fetch();
+        echo '{"result": 1, "product": [';
+        while ($row)
+        {
+            echo '{"productId": "'.$row["productId"].'", "productName": "'.$row["productName"].'", "productQuantity": "'.$row["productQuantity"].'", "productPrice": "'.$row["productPrice"].'", "productBarcode": "'.$row["productBarcode"].'"}';
+            
+            if ($row = $getlist_of_products_from_inventroy->fetch())
+            {
+                echo ',';
+            }
+        }
+        echo ']}';
+    }
+    else {
+        echo '{"result": 0, "status": "Could not display products in the inventory"}';
+    }
+}
+
+
+
+
+/**
+ * Function to display all tasks
+ */
+function display_tasks ( )
+{
+    include '../models/user_class.php';
+    $obj = new User ( );
+    session_start();
+    $user_id = $_SESSION['user_id'];
+       
+    if ( $obj->user_display_assigned_tasks ( $user_id ) )
+    {
+        $row = $obj->fetch ( );
+        echo '{"result":1, "tasks": [';
+        while ( $row )
+        {
+            echo '{"task_id": "'.$row ["task_id"].'", "task_title": "'.$row ["task_title"].'", 
+            "task_description": "'.$row ["task_description"].'",  "user_sname": "'.$row ["user_sname"].'",
+            "user_fname": "'.$row ["user_fname"].'"}';
+            
+            if ($row = $obj->fetch ( ) )   {
+                    echo ',';
+            }
+        }
+            echo ']}';
+    }   else
+    {
+        echo '{"result":0,"status": "An error occured for select product."}';
+    }
+}//end of display_all_tasks()
+
+
 
     
 /**
