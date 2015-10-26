@@ -40,7 +40,7 @@ $(function () {
         productPrice = encodeURI(document.getElementById("productPrice").value);
         productBarcode = encodeURI(document.getElementById("productBarcode").value);
         
-        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode" + productBarcode;
+        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode=" + productBarcode;
         console.log(url);
         
         messenger = sendRequest(url);

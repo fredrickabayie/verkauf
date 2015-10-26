@@ -33,7 +33,7 @@ if (isset($_GET['cmd']))
  */
 function addproduct_to_inventory ( ) {
     
-    if (isset($_REQUEST['productName'])&&isset($_REQUEST['productQuantity'])&&isset($_REQUEST['productPrice'])&&isset($_REQUEST['productBarcode']))
+    if (isset($_GET['productName'])&&isset($_GET['productQuantity'])&&isset($_GET['productPrice'])&&isset($_GET['productBarcode']))
     {
         include_once 'queries.php';
 

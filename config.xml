@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.fredrickabayie.ntf" versioncode = "11" version = "1.6.0">
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.fredrickabayie.pos" versioncode = "11" version = "1.6.0">
     <name>Okay</name>
     <description>
         A point of sale application
