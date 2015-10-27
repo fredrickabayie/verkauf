@@ -43,29 +43,22 @@ class Queries extends adb {
     }
     
     
+//    /**
+//    *Function to get the number of products in the inventory
+//    */
+//    function get_num_rows_query ( ) 
+//    {
+//        $productList_query = "SELECT * FROM `pointofsale_midsem_verkauf_inventory`";
+//        
+//        return $this->query($productList_query);
+//    }
     
-   /**
-    *Function to check a student gpa
-    *
-    */
-    function check_gpa ( $studentID )
-    {
-        $select_query = "SELECT `GPA` FROM `student_registration_system_sms` WHERE `studentID`='$studentID'";
+    function change_price_of_product_query ( $productId ) {
+        $editPrice_query = "";
         
-        return $this->query($select_query);
+        return $this->query($editPrice_query);
     }
     
-    
-   /**
-    *Function to check a student gpa
-    *
-    */
-    function check_major ( $studentID )
-    {
-        $select_query = "SELECT `Major` FROM `student_registration_system_sms` WHERE `studentID`='$studentID'";
-        
-        return $this->query($select_query);
-    }
     
 }
 

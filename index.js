@@ -35,7 +35,8 @@ $(function () {
 });
 
 
-$(function ($) {
+
+$(function () {
     "use strict";
     $(function () {
         var url, messenger, index, list = "";
@@ -45,18 +46,24 @@ $(function ($) {
         
         if (messenger.result === 1) {
             for (index in messenger.product) {
-                list += "<li class='collection-item avatar'>";
+                list += "<li style='' class='collection-item avatar list_item' onClick='edit_product_price(this.id)' id=" + messenger.product[index].productId + ">";
                 list += "<i class='fa fa-code circle'></i>";
                 list += "<span class='title'>" + messenger.product[index].productName + "</span>";
                 list += "<p>" + messenger.product[index].productQuantity + "<br>";
-                list += "" + messenger.product[index].productPrice + "</p>";
+                list += messenger.product[index].productPrice + "</p>";
                 list += "<a href='#!' class='secondary-content'><i class='fa fa-check'></i></a>";
                 list += "</li>";
             }
         }
-        $("#show_inventory").html(list);
+        $(".show_inventory").html(list);
     });
 });
+
+
+function edit_product_price(str) {
+    "use strict";
+    console.log(str);
+}
 
 //
 //<li class="collection-item avatar">

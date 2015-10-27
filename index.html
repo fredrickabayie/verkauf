@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
@@ -10,11 +10,24 @@
         <link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css" media="screen,projection" />
         <link rel="stylesheet" type="text/css" href="font-awesome-4.4.0/css/font-awesome.min.css" />
         <title>Verkauf</title>
+<!--
+         <script>
+      window.liveSettings = {
+        api_key: "a0b49b34b93844c38eaee15690d86413",
+        picker: "bottom-left",
+        detectlang: true,
+        dynamic: true,
+        autocollect: true
+      };
+    </script>
+    <script src="//cdn.transifex.com/live.js"></script>
+-->
     </head>
     <body>
         
         <div class="app">
             
+            <div class="navbar-fixed">
              <nav style="">
                 <div class="nav" style="">
                     <div class="navbar-fixed">
@@ -27,15 +40,20 @@
                     </div>
                 </div>
               </nav>
+            </div>
             
-            <ul class="collection container" id="show_inventory">
+            <div class="container">
+                <a style="color:black;" href="">Inventory <span style="color:black;" class="badge">4</span></a>
+            </div>
+            
+            <ul class="collection container show_inventory" id="staggered-test">
             
             </ul>
             
             <div class="row">
                 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
                     <a class="btn-floating btn-large red floating_edit_btn">
-                      <i class="fa fa-pencil"></i>
+                      <i class="fa fa-bars"></i>
                     </a>
                     <ul>
                       <li><a href="addproduct_page.html" class="btn-floating red"><i class="fa fa-plus"></i></i></a></li>
