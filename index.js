@@ -1,23 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-
-/*global console, $, alert, cordova*/
+/*global console, $, alert, cordova, JQuery*/
 
 function sendRequest(u) {
     "use strict";
@@ -40,8 +21,6 @@ $(function () {
         productPrice = encodeURI(document.getElementById("productPrice").value);
         productBarcode = encodeURI(document.getElementById("productBarcode").value);
         
-//        url = "http://localhost/mobile_web_2015/midsem/verkauf/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode=" + productBarcode";
-        
         url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode=" + productBarcode;
         
         messenger = sendRequest(url);
@@ -54,6 +33,91 @@ $(function () {
         }
     });
 });
+
+
+$(function ($) {
+    "use strict";
+    $(function () {
+        var url, messenger, index, list = "";
+        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=getlist_of_products_from_inventroy";
+        
+        messenger = sendRequest(url);
+        
+        if (messenger.result === 1) {
+            for (index in messenger.product) {
+                list += "<li class='collection-item avatar'>";
+                list += "<i class='fa fa-code circle'></i>";
+                list += "<span class='title'>" + messenger.product[index].productName + "</span>";
+                list += "<p>" + messenger.product[index].productQuantity + "<br>";
+                list += "" + messenger.product[index].productPrice + "</p>";
+                list += "<a href='#!' class='secondary-content'><i class='fa fa-check'></i></a>";
+                list += "</li>";
+            }
+        }
+        $("#show_inventory").html(list);
+    });
+});
+
+//
+//<li class="collection-item avatar">
+//      <i class="material-icons circle">folder</i>
+//      <span class="title">Title</span>
+//      <p>First Line <br>
+//         Second Line
+//      </p>
+//      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+//    </li>
+
+
+////            Function to load the list of task
+//            $ ( document ).ready ( function ( )
+//            {
+//               var url = "../controllers/user_controller.php?cmd=5";
+//               var obj = sendRequest ( url );
+//               var path = "";
+//                if ( obj.result === 1 )
+//                {
+//                    path = $(".path").val();
+//                    $("#profileimage").attr("src", path );
+//                    var div = "";
+//                    var timer;
+//                    for ( var index in obj.tasks )
+//                    {
+//                        div += "<div class='showcontentdetailsinnertile showcontentdetailsinnertile2'\n\
+//                                    onclick='getPreview ( "+obj.tasks [index].task_id+" )'>";
+//                        div += "<input class='showcontentdetailsinnertilecheckbox showcontentdetailsinnertilecheckbox2'\n\
+//                                    value="+obj.tasks [index].task_id+" name='todelete[]' type='checkbox'>";
+//                        div += "<div class='showcontentdetailsinnertilename'>";
+//                        div += "<span>"+obj.tasks [index].user_fname+" "+obj.tasks [index].user_sname+"</span>";
+//                        div += "<div class='showcontentdetailsinnertiledelete showcontentdetailsinnertiledelete2' \n\
+//                                    style='float:right; margin-right:10px'>";
+//                        div += "<a class='delete' style='padding: 7px' id="+obj.tasks [index].task_id+"><i id='deleteicon' \n\
+//                                    class='fa fa-trash-o'></i></a>";
+//                        div += "</div>";
+//                        div += "</div>";
+//                        div += "<div class='showcontentdetailsinnertiletitle'>\n\
+//                                    <span>"+obj.tasks [index].task_title+"</span></div>";
+//                        div += "<div class='showcontentdetailsinnertiledescription'>\n\
+//                                    <span>"+obj.tasks [index].task_description+"</span></div>";
+//                        div += "</div>";
+//                    }
+//                    $ ( ".showcontentdetailsinner" ).html ( div );
+////                     $ ( "#divStatus" ).text ( "Found " + obj.products.length + " results" );
+//                }
+//                else
+//                {
+////                        $ ( "#divStatus" ).text ( obj.message );
+////                        $ ( "#divStatus" ).css ( "backgroundColor", "red" );
+//                }
+//
+//                timer = setTimeout ( '(this)', 1000 );
+//            });
+
+
+
+
+
+
 
 
 //Function to handle the barcode scanner button

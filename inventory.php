@@ -43,11 +43,6 @@ function addproduct_to_inventory ( ) {
         $productBarcode = $_REQUEST['productBarcode'];
 
         $addproduct_to_inventory = new Queries();
-        
-//        if($productName == ""){
-//            echo '{"result":1, "status": "product empty"}';
-//            return false;
-//        }
 
         if ($addproduct_to_inventory->addproduct_to_inventory_query($productName, $productQuantity, $productPrice, $productBarcode))
         {
