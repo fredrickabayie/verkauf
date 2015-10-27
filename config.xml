@@ -15,4 +15,6 @@
     <access origin="*" />
     
     <gap:plugin name="net.roughshod.plugins.barcodescanner" version="3.0.0" />
+     <icon src="verKauf_logo.png" />
+    <gap:splash src="verKauf_splash.png" />
 </widget>
