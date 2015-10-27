@@ -163,7 +163,7 @@ $(function () {
                     $("#transaction_productId").val(messenger.productId);
                     $("#transaction_productName").val(messenger.productName);
                     $("#transaction_productQuantity").val(messenger.productQuantity);
-                    $("#transaction_productPrice").val("GHC " + messenger.productPrice);
+                    $("#transaction_productPrice").val(messenger.productPrice);
                 } else {
                     $(".message").text(messenger.message);
                 }
