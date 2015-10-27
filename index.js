@@ -23,7 +23,7 @@ function sendRequest(u) {
     "use strict";
     var obj, result;
     obj = $.ajax({url: u, async: false});
-    result = $.parseJSON(obj.resoponseText);
+    result = $.parseJSON(obj.responseText);
     return result;
 }
 
@@ -40,8 +40,9 @@ $(function () {
         productPrice = encodeURI(document.getElementById("productPrice").value);
         productBarcode = encodeURI(document.getElementById("productBarcode").value);
         
+//        url = "http://localhost/mobile_web_2015/midsem/verkauf/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode=" + productBarcode";
+        
         url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=addproduct_to_inventory&productName=" + productName + "&productQuantity=" + productQuantity + "&productPrice=" + productPrice + "&productBarcode=" + productBarcode;
-        console.log(url);
         
         messenger = sendRequest(url);
         
@@ -62,7 +63,6 @@ $(function () {
         cordova.plugins.barcodeScanner.scan(
             function (result) {
                 $("#productBarcode").val(result.text);
-//                    "Format: " + result.format + "\n" +
             },
             function (error) {
                 alert("Scanning failed: " + error);

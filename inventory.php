@@ -43,6 +43,11 @@ function addproduct_to_inventory ( ) {
         $productBarcode = $_REQUEST['productBarcode'];
 
         $addproduct_to_inventory = new Queries();
+        
+//        if($productName == ""){
+//            echo '{"result":1, "status": "product empty"}';
+//            return false;
+//        }
 
         if ($addproduct_to_inventory->addproduct_to_inventory_query($productName, $productQuantity, $productPrice, $productBarcode))
         {
@@ -50,7 +55,7 @@ function addproduct_to_inventory ( ) {
         }
         else
         {
-            echo ' { "result":1, "status": "Failed to add product to inventory" } ';
+            echo '{"result":0, "status": "Failed to add product to inventory"}';
         }
     }
 }

@@ -25,7 +25,7 @@ class Queries extends adb {
     */
     function addproduct_to_inventory_query ( $productName, $productQuantity, $productPrice, $productBarcode ) 
     {
-        $insert_query = "INSERT INTO `mobileweb_pointofsale_midsem_verkauf_inventory` ( `productName`, `productQuantity`, `productPrice`, `productBarcode` ) VALUES ( '$productName', '$productQuantity', '$productPrice', '$productBarcode' )";
+        $insert_query = "INSERT INTO `pointofsale_midsem_verkauf_inventory` ( `productName`, `productQuantity`, `productPrice`, `productBarcode` ) VALUES ( '$productName', '$productQuantity', '$productPrice', '$productBarcode' )";
         
         return $this->query($insert_query);
     }
@@ -37,7 +37,7 @@ class Queries extends adb {
     */
     function getlist_of_products_from_inventroy_query ( )
     {
-        $productList_query = "SELECT * FROM `mobileweb_pointofsale_midsem_verkauf_inventory`";
+        $productList_query = "SELECT * FROM `pointofsale_midsem_verkauf_inventory`";
         
         return $this->query($productList_query);
     }
