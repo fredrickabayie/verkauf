@@ -1,4 +1,4 @@
-/*global console, $, alert, cordova, JQuery*/
+/*global console, $, alert, cordova, JQuery, timer*/
 
 function sendRequest(u) {
     "use strict";
@@ -57,6 +57,7 @@ $(function () {
         }
         $(".show_inventory").html(list);
     });
+    var timer = setTimeout(this, 1000);
 });
 
 
@@ -68,8 +69,7 @@ function edit_product_price(productInfo) {
     str = productInfo;
     detail = str.split(",");
     
-    var ok = $('#edit_productId').val(detail[0]);
-    console.log(ok);
+    $('#edit_productId').val(detail[0]);
     $('.modal_product_name').text(detail[1]);
     $('#edit_product_price').val(detail[2]);
     $('#modal1').openModal();
