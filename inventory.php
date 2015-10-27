@@ -29,6 +29,10 @@ if (isset($_GET['cmd']))
             send_mesg( '+233209339957', 'verKauf' );
             break;
             
+        case 'search_for_product':
+            search_for_product ( );
+            break;
+            
         default:
             echo "usage: [GPA [studentID]] [Major [studentID]]";
             break;
@@ -75,56 +79,6 @@ function user_login ( ) {
         }
     }
 }
-
-
-//
-//function user_login ( )
-//{
-//    if ( isset ( $_REQUEST['username'] ) & isset ( $_REQUEST['password'] ) )
-//    {
-//        include_once '../models/user_class.php';
-//        $obj = new User ( );
-//        $username = $_REQUEST ['username'];
-//        $password = $_REQUEST ['password'];
-//        $row = $obj->user_login ( $username, $password );
-//        if ( !$row )
-//        {
-//           echo '{"result":0, "message":"Failed to login"}';
-//        }
-//        else
-//        {
-////            echo json_encode ( $row );
-//            session_start ( );
-//            $user_type = $row['user_type'];
-//            if ( $user_type == 'admin' )
-//            {
-//                echo '{"result":1, "username":"'.$row['username'].'"}';
-//                $_SESSION ['user_type'] = $user_type;
-//                $_SESSION ['user_id'] = $row['user_id'];
-////                header("Location: home.php");
-////                exit ( );
-//            }
-//            else if ( $user_type == 'regular')
-//            {
-//                echo '{"result":1, "username":"'.$row['username'].'"}';
-//                $_SESSION ['user_type'] = $user_type;
-//                $_SESSION ['user_id'] = $row['user_id'];
-//                $_SESSION ['path'] = $row['path'];
-//                $_SESSION ['username'] = $row['username'];
-////                header("Location: home.php");
-////                exit ( );
-//            }
-//        }
-//    }
-//}//end of user_login
-
-
-
-
-
-
-
-
 
 
 
@@ -186,6 +140,7 @@ function getlist_of_products_from_inventroy ( ) {
 }
 
 
+
 /**
 *Function to update the price of a product in the inventory
 */
@@ -224,7 +179,7 @@ function get_product_quantity_from_inventory ( ) {
         
         if($get_product_quantity_from_inventory->get_product_quantity_from_inventory_query($productName)) {
             
-            $row = $select->fetch();
+            $row = $get_product_from_inventory->fetch();
             
             $msg = $studentID." is left with ".$row['productName'];
             
@@ -238,6 +193,29 @@ function get_product_quantity_from_inventory ( ) {
     }
 }
 
+
+/**
+*Function to search for product by barcode
+*
+*/
+function search_for_product ( ) {
+    if (isset($_REQUEST['productBarcode'])) {
+        include_once 'queries.php';
+        
+        $productBarcode = $_REQUEST['productBarcode'];
+        
+        $search_for_product = new Queries();
+        
+        $search_for_product->search_for_product_query($productBarcode);
+        
+        if ($row = $search_for_product->fetch()) {
+            echo json_encode($row);   
+        }
+        else {
+            echo '{"result":0,"message":"No such product in inventory"}';
+        }
+    }
+}
 
 
 

@@ -76,6 +76,28 @@ class Queries extends adb {
     }
     
     
+    /**
+    *Function to make a transaction
+    *
+    */
+    function make_transaction_query ( $transactionId, $customerNumber, $productId, $total ) {
+        $transaction_query = "INSERT INTO `pointofsale_midsem_verkauf_transaction` (`transactionId`, `customerNumber`, `productId`, `total`) VALUES ( '$transactionId', '$customerNumber', '$productId', '$total' )";
+        
+        return $this->query($transaction_query);
+    }
+    
+    
+    /**
+    *Function to search for product by barcode
+    *
+    */
+    function search_for_product_query ( $productBarcode ) {
+        $search_query = "SELECT * FROM `pointofsale_midsem_verkauf_inventory` WHERE `productBarcode`='$productBarcode'";
+        
+        return $this->query($search_query);
+    }
+    
+    
 }
 
 //$okay = new Queries();

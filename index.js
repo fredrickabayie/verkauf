@@ -23,7 +23,7 @@ $(function () {
         if (messenger.result === 1) {
             window.location.replace("home_page.html");
 
-        } else if (messenger.result === 2){
+        } else if (messenger.result === 2) {
             window.location.replace("sale_page.html");
 
             return false;
@@ -33,8 +33,6 @@ $(function () {
         
     });
 });
-
-
 
 
 //function to add product to the inventory
@@ -78,7 +76,7 @@ $(function () {
                 list += "<i class='fa fa-code circle'></i>";
                 list += "<span class='title'>" + messenger.product[index].productName + "</span>";
                 list += "<p>" + messenger.product[index].productQuantity + "<br>";
-                list += messenger.product[index].productPrice + "</p>";
+                list += "GHC " + messenger.product[index].productPrice + "</p>";
                 list += "<a href='#!' class='secondary-content'><i class='fa fa-check'></i></a>";
                 list += "</li>";
             }
@@ -142,6 +140,28 @@ $(function () {
     });
 });
 
+
+//Function to handle the barcode scanner button
+$(function () {
+    "use strict";
+    $("#transaction_productBarcode_btn").click(function () {
+        cordova.plugins.barcodeScanner.scan(
+            function (result) {
+                
+                var productBarcode, url;
+                productBarcode = $("#transaction_productBarcode").val(result.text);
+                
+                alert(productBarcode);
+                
+                url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=change_price_of_product&productId=" + productBarcode;
+                
+            },
+            function (error) {
+                alert("Scanning failed: " + error);
+            }
+        );
+    });
+});
 
 
 
