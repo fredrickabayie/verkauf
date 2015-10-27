@@ -57,7 +57,6 @@ $(function () {
         }
         $(".show_inventory").html(list);
     });
-    var timer = setTimeout(this, 1000);
 });
 
 

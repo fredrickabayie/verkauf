@@ -44,6 +44,17 @@ class Queries extends adb {
     
     
     /**
+    *Function to get the quantity of a product by name
+    *
+    */
+    function get_product_quantity_from_inventory_query ( $productName ) {
+        $productQuantity_query = "SELECT productQuantity FROM `pointofsale_midsem_verkauf_inventory` WHERE productName='$productName'";
+        
+        return $this->query($productQuantity_query);
+    }
+    
+    
+    /**
     *Function to change the price of a product
     *
     */

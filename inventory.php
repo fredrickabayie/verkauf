@@ -17,8 +17,12 @@ if (isset($_GET['cmd']))
             change_price_of_product ( );
             break;
             
-        case 'passcode':
-            get_otp ( );
+        case 'get_product_quantity_from_inventory':
+            get_product_quantity_from_inventory ( );
+            break;
+            
+        case 'send':
+            send_mesg( '+233209339957', 'verKauf' );
             break;
             
         default:
@@ -108,35 +112,35 @@ function change_price_of_product ( ) {
 
 
 /**
- * Function to display all tasks
- */
-function display_tasks ( )
-{
-    include '../models/user_class.php';
-    $obj = new User ( );
-    session_start();
-    $user_id = $_SESSION['user_id'];
-       
-    if ( $obj->user_display_assigned_tasks ( $user_id ) )
-    {
-        $row = $obj->fetch ( );
-        echo '{"result":1, "tasks": [';
-        while ( $row )
-        {
-            echo '{"task_id": "'.$row ["task_id"].'", "task_title": "'.$row ["task_title"].'", 
-            "task_description": "'.$row ["task_description"].'",  "user_sname": "'.$row ["user_sname"].'",
-            "user_fname": "'.$row ["user_fname"].'"}';
+*Function to get the quantity of a product from the inventory
+*through sms
+*/
+function get_product_quantity_from_inventory ( ) {
+    if (isset($_REQUEST['message'])) {
+        
+        include_once 'queries.php';
+        
+        $content = $_REQUEST['message'];
+        $message = explode(" ", $content);
+        $productName = $message[0];
+        
+        $get_product_quantity_from_inventory = new Queries();
+        
+        if($get_product_quantity_from_inventory->get_product_quantity_from_inventory_query($productName)) {
             
-            if ($row = $obj->fetch ( ) )   {
-                    echo ',';
-            }
+            $row = $select->fetch();
+            
+            $msg = $studentID." is left with ".$row['productName'];
+            
+            send_mesg('+233209339957', $msg);
+            
+            echo $msg;
         }
-            echo ']}';
-    }   else
-    {
-        echo '{"result":0,"status": "An error occured for select product."}';
+        else {
+            echo "Please enter the product name well!";
+        }
     }
-}//end of display_all_tasks()
+}
 
 
 
@@ -307,17 +311,17 @@ function display_details ( $studentID )
 */
 function send_mesg( $phoneNo, $message )
 {
-    include_once '../Smsgh/Api.php';
+    include_once 'Smsgh/Api.php';
     
-    $auth = new BasicAuth("jokyhrvs","volkzmqn");
-//    $auth = new BasicAuth("yralkzfn","znbzlsho");
+//    $auth = new BasicAuth("jokyhrvs","volkzmqn");
+    $auth = new BasicAuth("yralkzfn","znbzlsho");
     
     $apiHost = new ApiHost($auth);
     $messageApi = new MessagingApi($apiHost);
     
     try
     {
-        $messageResponse = $messageApi->sendQuickMessage("Important", $phoneNo, $message);
+        $messageResponse = $messageApi->sendQuickMessage("verKauf", $phoneNo, $message);
         
         if($messageResponse instanceof MessageResponse)
         {
@@ -335,34 +339,5 @@ function send_mesg( $phoneNo, $message )
         echo 'Exception', $ex->getMessage(), "\n";
     }
 }
-
-
-
-/**
-*Function to generate random numbers
-*
-*/
-function random($length = 6)
-{
-//    session_start();
-    $chars = 'bcdfghjklmnprstvwxzaeiou0123456789';
-    $result = '';
-
-    for ($p = 0; $p < $length; $p++)
-    {
-        $result .= ($p%2) ? $chars[mt_rand(19, 23)] : $chars[mt_rand(0, 18)];
-    }
-
-    return $result;
-}
-//echo random();
-
-
-
-
-
-
-
-
 
 
