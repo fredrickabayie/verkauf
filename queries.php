@@ -53,6 +53,14 @@ class Queries extends adb {
 //        return $this->query($productList_query);
 //    }
     
+    
+    function get_details_of_product_query ( $productId ) {
+        $getDetails_query = "SELECT * FROM `pointofsale_midsem_verkauf_inventory` WHERE productId='$productId'";
+        
+        return $this->query($getDetails_query);
+    }
+    
+    
     function change_price_of_product_query ( $productId ) {
         $editPrice_query = "";
         

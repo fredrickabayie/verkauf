@@ -63,6 +63,8 @@ $(function () {
 function edit_product_price(str) {
     "use strict";
     console.log(str);
+//    $('').
+    $('#modal1').openModal();
 }
 
 //
