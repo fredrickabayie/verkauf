@@ -46,7 +46,7 @@ $(function () {
         
         if (messenger.result === 1) {
             for (index in messenger.product) {
-                list += "<li style='' class='collection-item avatar list_item' onClick='edit_product_price(this.id)' id=" + messenger.product[index].productId + ">";
+                list += "<li style='' class='collection-item avatar list_item' onClick='edit_product_price(this.id)' id=" + messenger.product[index].productId + "," + messenger.product[index].productName + "," + messenger.product[index].productPrice + ">";
                 list += "<i class='fa fa-code circle'></i>";
                 list += "<span class='title'>" + messenger.product[index].productName + "</span>";
                 list += "<p>" + messenger.product[index].productQuantity + "<br>";
@@ -60,10 +60,18 @@ $(function () {
 });
 
 
-function edit_product_price(str) {
+
+function edit_product_price(productInfo) {
     "use strict";
-    console.log(str);
-//    $('').
+    console.log(productInfo);
+    var detail, str;
+    str = productInfo;
+    detail = str.split(",");
+//    console.log(detail[0]);
+//    console.log(detail[1]);
+    
+    $('.modal_product_name').text(detail[1]);
+    $('#edit_product_price').val(detail[2]);
     $('#modal1').openModal();
 }
 
