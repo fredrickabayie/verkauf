@@ -75,7 +75,7 @@ $(function () {
                 list += "<li style='' class='collection-item avatar list_item' onClick='edit_product_price(this.id)' id=" + messenger.product[index].productId + "," + messenger.product[index].productName + "," + messenger.product[index].productPrice + ">";
                 list += "<i class='fa fa-code circle'></i>";
                 list += "<span class='title'>" + messenger.product[index].productName + "</span>";
-                list += "<p>" + messenger.product[index].productQuantity + "<br>";
+                list += "<p>Qty " + messenger.product[index].productQuantity + "<br>";
                 list += "GHC " + messenger.product[index].productPrice + "</p>";
                 list += "<a href='#!' class='secondary-content'><i class='fa fa-check'></i></a>";
                 list += "</li>";
@@ -162,7 +162,7 @@ $(function () {
 //                  $("#transaction_productId").val(messenger.productId);
                     $("#transaction_productName").val(messenger.productName);
                     $("#transaction_productQuantity").val(messenger.productQuantity);
-                    $("#transaction_productPrice").val(messenger.productPrice);
+                    $("#transaction_productPrice").val("GHC " + messenger.productPrice);
                 } else {
                     $(".message").text(messenger.message);
                 }
@@ -176,31 +176,31 @@ $(function () {
 });
 
 
-//$(function () {
-//    "use strict";
-//    $("#transaction_save_btn").click(function () {
-//        var productBarcode, url, messenger, result;
-//        
-//        result = $("#transaction_productBarcode").val();
-//        productBarcode = result;
-//
-//        url = "inventory.php?cmd=change_price_of_product&productId=" + productBarcode;
-//
-////                url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=change_price_of_product&productId=" + productBarcode;
-//
-//        messenger = sendRequest(url);
-//
-//        if (messenger.result === 1) {
-////                  $("#transaction_productId").val(messenger.productId);
-//            console.log(messenger.productName);
-////            $("#transaction_productName").val(messenger.productName);
-////            $("#transaction_productQuantity").val(messenger.productQuantity);
-////            $("#transaction_productPrice").val(messenger.productPrice);
-//        } else {
-//            $(".message").text(messenger.message);
-//        }
-//    });
-//});
+$(function () {
+    "use strict";
+    $("#transaction_save_btn").click(function () {
+        var productBarcode, url, messenger, result;
+        
+        result = $("#transaction_productBarcode").val();
+        productBarcode = result;
+
+//        url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+
+                url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+
+        messenger = sendRequest(url);
+
+        if (messenger.result === 1) {
+//                  $("#transaction_productId").val(messenger.productId);
+            console.log(messenger.productName);
+            $("#transaction_productName").val(messenger.productName);
+            $("#transaction_productQuantity").val("Qty " + messenger.productQuantity);
+            $("#transaction_productPrice").val("GHC " + messenger.productPrice);
+        } else {
+            $(".message").text(messenger.message);
+        }
+    });
+});
 
 
 

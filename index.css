@@ -46,6 +46,14 @@ nav {
     height: 30px;
 }
 
+#float_btn {
+    background: #b83838;
+}
+
+#addproduct_barcodescan_btn {
+    background: #b83838;
+}
+
 #addproduct_save_btn   {
     background: #b83838;
     color: #fff;
@@ -55,6 +63,21 @@ nav {
     height: 40px;
     text-decoration: none;
 /*    bottom: 45px;*/
+}
+
+#transaction_save_btn {
+    background: #003366;
+    color: #fff;
+    /*    display: block;*/
+    padding: 0px 10px;
+    line-height: 40px;
+    height: 40px;
+    text-decoration: none;
+    /*    bottom: 45px;*/
+}
+
+#transaction_productBarcode_btn {
+    background: #003366;
 }
 
 
