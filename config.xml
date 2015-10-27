@@ -7,5 +7,12 @@
     <author href="http://www.ashesi.edu.gh" email="fredrick.abayie@ashesi.edu.gh">
         Fredrick Abayie
     </author>
+    
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    
+    <allow-navigtion href="*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+    
     <gap:plugin name="net.roughshod.plugins.barcodescanner" version="3.0.0" />
 </widget>

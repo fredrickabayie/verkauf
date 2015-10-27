@@ -22,7 +22,7 @@
 function sendRequest(u) {
     "use strict";
     var obj, result;
-    obj = $.ajax({url: u, dataType: 'jsonp', async: false});
+    obj = $.ajax({url: u, async: false});
     result = $.parseJSON(obj.resoponseText);
     return result;
 }

@@ -46,7 +46,7 @@ function addproduct_to_inventory ( ) {
 
         if ($addproduct_to_inventory->addproduct_to_inventory_query($productName, $productQuantity, $productPrice, $productBarcode))
         {
-            echo ' { "result":1, "status": "Product added to inventory" } ';
+            echo '{"result":1, "status": "Product added to inventory"}';
         }
         else
         {
