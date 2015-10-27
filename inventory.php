@@ -33,6 +33,10 @@ if (isset($_GET['cmd']))
             search_for_product ( );
             break;
             
+        case 'make_transaction';
+            make_transaction ( );
+            break;
+            
         default:
             echo "usage: [GPA [studentID]] [Major [studentID]]";
             break;
@@ -213,6 +217,34 @@ function search_for_product ( ) {
         }
         else {
             echo '{"result":0,"message":"No such product in inventory"}';
+        }
+    }
+}
+
+
+/**
+*Function to make a transaction
+*
+*/
+function make_transaction ( ) {
+    if (isset($_REQUEST['customerNumber'])&&
+        isset($_REQUEST['productId'])&&isset($_REQUEST['total'])) {
+        include_once 'queries.php';
+        
+        $customerNumber = $_REQUEST['customerNumber'];
+        $productId = $_REQUEST['productId'];
+        $total = $_REQUEST['total'];
+        
+        $make_transaction = new Queries();
+        
+        if($make_transaction->make_transaction_query($customerNumber, $productId, $total)) {
+            echo '{"result":1, "status": "Product Sold"}';
+            if ($total >= 500) {
+                send_mesg( $customerNumber, "10% Discount on next purchase" );
+            }
+        }
+        else {
+            echo '{"result":0, "status": "Failed to sell product"}';
         }
     }
 }

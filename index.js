@@ -144,6 +144,7 @@ $(function () {
 //Function to handle the barcode scanner button
 $(function () {
     "use strict";
+    $("#transaction_productId").hide();
     $("#transaction_productBarcode_btn").click(function () {
         cordova.plugins.barcodeScanner.scan(
             function (result) {
@@ -159,7 +160,7 @@ $(function () {
                 messenger = sendRequest(url);
                 
                 if (messenger.result === 1) {
-//                  $("#transaction_productId").val(messenger.productId);
+                    $("#transaction_productId").val(messenger.productId);
                     $("#transaction_productName").val(messenger.productName);
                     $("#transaction_productQuantity").val(messenger.productQuantity);
                     $("#transaction_productPrice").val("GHC " + messenger.productPrice);
@@ -176,28 +177,27 @@ $(function () {
 });
 
 
+/**
+*Function to add a new transaction
+*
+*/
 $(function () {
     "use strict";
     $("#transaction_save_btn").click(function () {
-        var productBarcode, url, messenger, result;
+        var customerNumber, productId, total, url, messenger;
         
-        result = $("#transaction_productBarcode").val();
-        productBarcode = result;
+        customerNumber = encodeURI(document.getElementById("transaction_customerNumber").value);
+        productId = encodeURI(document.getElementById("transaction_productId").value);
+        total = encodeURI(document.getElementById("transaction_productPrice").value);
 
-//        url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
-
-                url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=make_transaction&customerNumber=" + customerNumber + "&productId=" + productId + "&total=" + total;
 
         messenger = sendRequest(url);
 
         if (messenger.result === 1) {
-//                  $("#transaction_productId").val(messenger.productId);
-            console.log(messenger.productName);
-            $("#transaction_productName").val(messenger.productName);
-            $("#transaction_productQuantity").val("Qty " + messenger.productQuantity);
-            $("#transaction_productPrice").val("GHC " + messenger.productPrice);
+            $(".message").text(messenger.status);
         } else {
-            $(".message").text(messenger.message);
+            $(".message").text(messenger.status);
         }
     });
 });
