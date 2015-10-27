@@ -209,7 +209,7 @@ function search_for_product ( ) {
         $search_for_product->search_for_product_query($productBarcode);
         
         if ($row = $search_for_product->fetch()) {
-            echo json_encode($row);   
+            echo '{"result":1, "productId":"'.$row['productId'].'", "productName":"'.$row['productName'].'", "productQuantity":"'.$row['productQuantity'].'", "productPrice":"'.$row['productPrice'].'", "productBarcode":"'.$row['productBarcode'].'"}';   
         }
         else {
             echo '{"result":0,"message":"No such product in inventory"}';

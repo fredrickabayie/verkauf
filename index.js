@@ -148,12 +148,22 @@ $(function () {
         cordova.plugins.barcodeScanner.scan(
             function (result) {
                 
-                var productBarcode, url;
-                productBarcode = $("#transaction_productBarcode").val(result.text);
-                
-                alert(productBarcode);
+                var productBarcode, url, messenger;
+                $("#transaction_productBarcode").val(result.text);
+                productBarcode = result.text;
                 
                 url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=change_price_of_product&productId=" + productBarcode;
+                
+                messenger = sendRequest(url);
+                
+                if(messenger.result === 1) {
+//                  $("#transaction_productId").val(messenger.productId);
+                    $("#transaction_productName").val(messenger.productName);
+                    $("#transaction_productQuantity").val(messenger.productQuantity);
+                    $("#transaction_productPrice").val(messenger.productPrice);
+                } else {
+                    $(".message").text(messenger.message);
+                }
                 
             },
             function (error) {
