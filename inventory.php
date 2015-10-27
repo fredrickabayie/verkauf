@@ -51,8 +51,6 @@ function user_login ( ) {
         
         $user_login->user_login_query($username,$password);
         
-//        $row = $user_login->fetch();
-//        echo $row['userType'];
         if(!$row = $user_login->fetch()) {
             echo '{"result":0, "message":"Failed to login"}';
         } else {
@@ -66,14 +64,12 @@ function user_login ( ) {
                 echo '{"result":1, "username":"'.$row['userType'].'"}';
                 
                 $_SESSION['userType'] = $userType;
-//                header("Location: home_page.html");
                 exit();
                 
             } else if ($userType == 'teller') {
                 echo '{"result":2, "username":"'.$row['userType'].'"}';
                 
                 $_SESSION['userType'] = $userType;
-//                header("Location: sale_page.html");
                 exit();
             }
         }

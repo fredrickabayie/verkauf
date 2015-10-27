@@ -16,18 +16,16 @@ $(function () {
         username = encodeURI(document.getElementById("username").value);
         password = encodeURI(document.getElementById("password").value);
         
-        url = "inventory.php?cmd=user_login&username=" + username + "&password=" + password;
-        
-//        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=user_login&username=" + username + "&password=" + password;
+        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=user_login&username=" + username + "&password=" + password;
         
         messenger = sendRequest(url);
         
         if (messenger.result === 1) {
             window.location.replace("home_page.html");
-//            $(".status").text(messenger.username);
+
         } else if (messenger.result === 2){
             window.location.replace("sale_page.html");
-//            $(".status").text(messenger.message);
+
             return false;
         } else {
             $(".status").text(messenger.message);
