@@ -13,8 +13,8 @@ if (isset($_GET['cmd']))
             getlist_of_products_from_inventroy ( );
             break;
             
-        case 'major':
-            check_major ( );
+        case 'change_price_of_product':
+            change_price_of_product ( );
             break;
             
         case 'passcode':
@@ -57,7 +57,7 @@ function addproduct_to_inventory ( ) {
 
 
 /**
-*Function
+*Function to get the list of products in the inventory
 *
 */
 function getlist_of_products_from_inventroy ( ) {
@@ -86,6 +86,25 @@ function getlist_of_products_from_inventroy ( ) {
 }
 
 
+/**
+*Function to update the price of a product in the inventory
+*/
+function change_price_of_product ( ) {
+    include_once 'queries.php';
+    
+    $productId = $_REQUEST['productId'];
+    $productPrice = $_REQUEST['productPrice'];
+    
+    $change_price_of_product = new Queries();
+    
+    if ($change_price_of_product->change_price_of_product_query($productId,$productPrice))
+    {
+        echo '{"result":1, "status": "Product price updated"}';
+    }
+    else {
+        echo '{"result":0, "status": "Price not updated"}';
+    }
+}
 
 
 /**
@@ -118,6 +137,10 @@ function display_tasks ( )
         echo '{"result":0,"status": "An error occured for select product."}';
     }
 }//end of display_all_tasks()
+
+
+
+
 
 
 

@@ -43,26 +43,13 @@ class Queries extends adb {
     }
     
     
-//    /**
-//    *Function to get the number of products in the inventory
-//    */
-//    function get_num_rows_query ( ) 
-//    {
-//        $productList_query = "SELECT * FROM `pointofsale_midsem_verkauf_inventory`";
-//        
-//        return $this->query($productList_query);
-//    }
-    
-    
-    function get_details_of_product_query ( $productId ) {
-        $getDetails_query = "SELECT * FROM `pointofsale_midsem_verkauf_inventory` WHERE productId='$productId'";
-        
-        return $this->query($getDetails_query);
-    }
-    
-    
-    function change_price_of_product_query ( $productId ) {
-        $editPrice_query = "";
+    /**
+    *Function to change the price of a product
+    *
+    */
+    function change_price_of_product_query ( $productId, $productPrice ) 
+    {
+        $editPrice_query = "UPDATE `pointofsale_midsem_verkauf_inventory` SET productPrice='$productPrice' WHERE productId='$productId'";
         
         return $this->query($editPrice_query);
     }
