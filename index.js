@@ -1,5 +1,4 @@
 /*global console, $, alert, cordova, JQuery, timer*/
-
 function sendRequest(u) {
     "use strict";
     var obj, result;
@@ -7,6 +6,37 @@ function sendRequest(u) {
     result = $.parseJSON(obj.responseText);
     return result;
 }
+
+
+$(function () {
+    "use strict";
+    $("#login_btn").click(function () {
+        var url, username, password, messenger;
+        
+        username = encodeURI(document.getElementById("username").value);
+        password = encodeURI(document.getElementById("password").value);
+        
+        url = "inventory.php?cmd=user_login&username=" + username + "&password=" + password;
+        
+//        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=user_login&username=" + username + "&password=" + password;
+        
+        messenger = sendRequest(url);
+        
+        if (messenger.result === 1) {
+            window.location.replace("home_page.html");
+//            $(".status").text(messenger.username);
+        } else if (messenger.result === 2){
+            window.location.replace("sale_page.html");
+//            $(".status").text(messenger.message);
+            return false;
+        } else {
+            $(".status").text(messenger.message);
+        }
+        
+    });
+});
+
+
 
 
 //function to add product to the inventory

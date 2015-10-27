@@ -5,6 +5,10 @@ if (isset($_GET['cmd']))
     
     switch ($cmd)
     {
+        case 'user_login':
+            user_login ( );
+            break;
+            
         case 'addproduct_to_inventory':
             addproduct_to_inventory ( );
             break;
@@ -30,6 +34,102 @@ if (isset($_GET['cmd']))
             break;
     }
 }
+
+
+/**
+*Function to check to user's login
+*
+*/
+function user_login ( ) {
+    if(isset($_REQUEST['username'])&&isset($_REQUEST['password'])) {
+        include_once 'queries.php';
+        
+        $username = $_REQUEST['username'];
+        $password = $_REQUEST['password'];
+        
+        $user_login = new Queries();
+        
+        $user_login->user_login_query($username,$password);
+        
+//        $row = $user_login->fetch();
+//        echo $row['userType'];
+        if(!$row = $user_login->fetch()) {
+            echo '{"result":0, "message":"Failed to login"}';
+        } else {
+            //echo json_encode($row);
+            
+            session_start();
+            
+            $userType = $row['userType'];
+            
+            if($userType == 'owner') {
+                echo '{"result":1, "username":"'.$row['userType'].'"}';
+                
+                $_SESSION['userType'] = $userType;
+//                header("Location: home_page.html");
+                exit();
+                
+            } else if ($userType == 'teller') {
+                echo '{"result":2, "username":"'.$row['userType'].'"}';
+                
+                $_SESSION['userType'] = $userType;
+//                header("Location: sale_page.html");
+                exit();
+            }
+        }
+    }
+}
+
+
+//
+//function user_login ( )
+//{
+//    if ( isset ( $_REQUEST['username'] ) & isset ( $_REQUEST['password'] ) )
+//    {
+//        include_once '../models/user_class.php';
+//        $obj = new User ( );
+//        $username = $_REQUEST ['username'];
+//        $password = $_REQUEST ['password'];
+//        $row = $obj->user_login ( $username, $password );
+//        if ( !$row )
+//        {
+//           echo '{"result":0, "message":"Failed to login"}';
+//        }
+//        else
+//        {
+////            echo json_encode ( $row );
+//            session_start ( );
+//            $user_type = $row['user_type'];
+//            if ( $user_type == 'admin' )
+//            {
+//                echo '{"result":1, "username":"'.$row['username'].'"}';
+//                $_SESSION ['user_type'] = $user_type;
+//                $_SESSION ['user_id'] = $row['user_id'];
+////                header("Location: home.php");
+////                exit ( );
+//            }
+//            else if ( $user_type == 'regular')
+//            {
+//                echo '{"result":1, "username":"'.$row['username'].'"}';
+//                $_SESSION ['user_type'] = $user_type;
+//                $_SESSION ['user_id'] = $row['user_id'];
+//                $_SESSION ['path'] = $row['path'];
+//                $_SESSION ['username'] = $row['username'];
+////                header("Location: home.php");
+////                exit ( );
+//            }
+//        }
+//    }
+//}//end of user_login
+
+
+
+
+
+
+
+
+
 
 
 /**

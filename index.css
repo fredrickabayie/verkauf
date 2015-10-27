@@ -57,6 +57,18 @@ nav {
 /*    bottom: 45px;*/
 }
 
+
+#login_btn  {
+    background: #b83838;
+    color: #fff;
+    display: block;
+    padding: 0px 10px;
+    line-height: 30px;
+    height: 30px;
+    text-decoration: none;
+}
+
+
 .floating_edit_btn{
     background: white;
 }

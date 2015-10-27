@@ -17,6 +17,16 @@ class Queries extends adb {
     }
     
     
+    /**
+    *Function to distinguish between the two users
+    */
+    function user_login_query ( $username, $password )
+    {
+        $login_query = "SELECT * FROM `pointofsale_midsem_verkauf_login` WHERE username='$username' and password='$password'";
+        
+        return $this->query($login_query);
+    }
+    
     
     /**
     *Function to query the adding of a new product to the inventory

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css" media="screen,projection" />
+        <link rel="stylesheet" type="text/css" href="font-awesome-4.4.0/css/font-awesome.min.css" />
+        <title>Verkauf</title>
+<!--
+         <script>
+      window.liveSettings = {
+        api_key: "a0b49b34b93844c38eaee15690d86413",
+        picker: "bottom-left",
+        detectlang: true,
+        dynamic: true,
+        autocollect: true
+      };
+    </script>
+    <script src="//cdn.transifex.com/live.js"></script>
+-->
+    </head>
+    <body>
+        
+        <div class="app">
+            
+            <div class="navbar-fixed">
+             <nav style="">
+                <div class="nav" style="">
+                    <div class="navbar-fixed">
+                      <ul class="left">
+                            <li><a class="brand" style="color:#b83838">verKauf</a></li>
+                      </ul>
+                        <ul class="right">
+                            <li><a href="#!" class="brand" style="color:#b83838"><i class="fa fa-gears fa-lg"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+              </nav>
+            </div>
+            
+            <div class="container">
+                <a style="color:black;" href="">Inventory <span style="color:black;" class="badge">4</span></a>
+            </div>
+            
+                <div id="modal1" class="modal bottom-sheet">
+                    <div class="modal-content">
+                      <h4 class="modal_product_name"></h4>
+                      <div class="input-field col s12 m6 l6">
+                        <input id="edit_product_price" type="text" class="validate" length="12" />
+                        <input id="edit_productId" type="text" class="validate" />
+<!--                        <label for="productName" id="edit_productId"></label>-->
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn">Update</a>
+                    </div>
+                  </div>
+            
+            <ul class="collection container show_inventory" id="staggered-test">
+            
+            </ul>
+            
+            <div class="row">
+                <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                    <a class="btn-floating btn-large red floating_edit_btn">
+                      <i class="fa fa-bars"></i>
+                    </a>
+                    <ul>
+                      <li><a href="addproduct_page.html" class="btn-floating green"><i class="fa fa-plus"></i></i></a></li>
+                      <li><a href="editproduct_page.html" class="btn-floating yellow darken-1"><i class="fa fa-pencil"></i></a></li>
+<!--
+                      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+                      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+-->
+                    </ul>
+                  </div>
+            </div>
+            
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
