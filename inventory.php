@@ -43,6 +43,8 @@ if (isset($_GET['cmd']))
     }
 }
 
+//send_mesg( "0209339957", "Test" );
+
 
 /**
 *Function to check to user's login
@@ -271,11 +273,11 @@ function send_mesg( $phoneNo, $message )
         
         if($messageResponse instanceof MessageResponse)
         {
-//            echo "msg1:".$messageResponse->getStatus()."</br></br>";
+            echo "msg1:".$messageResponse->getStatus()."</br></br>";
         }
         elseif ($messageResponse instanceof HttpResponse)
         {
-//            echo "\nServer Response Status: ".$messageResponse->getStatus()."</br></br>";
+            echo "\nServer Response Status: ".$messageResponse->getStatus()."</br></br>";
         }
         
         echo "</br>success done";

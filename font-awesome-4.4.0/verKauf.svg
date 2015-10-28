@@ -4,20 +4,14 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="640px" height="1136px" viewBox="0 0 640 1136" enable-background="new 0 0 640 1136" xml:space="preserve">
 <g>
-	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="353.3263" y1="575.1143" x2="277.4343" y2="443.6655">
-		<stop  offset="0.2353" style="stop-color:#188772"/>
-		<stop  offset="0.3" style="stop-color:#1D907A"/>
-		<stop  offset="0.4053" style="stop-color:#2AA88F"/>
-		<stop  offset="0.4123" style="stop-color:#2BAA91"/>
-		<stop  offset="0.5407" style="stop-color:#2BAA91"/>
-		<stop  offset="0.5862" style="stop-color:#3EC2A8"/>
-		<stop  offset="0.6456" style="stop-color:#52DCC1"/>
-		<stop  offset="0.6814" style="stop-color:#5AE5CA"/>
-		<stop  offset="0.6944" style="stop-color:#64ECD2"/>
-		<stop  offset="0.7144" style="stop-color:#6BF1D7"/>
-		<stop  offset="0.7702" style="stop-color:#6DF2D8"/>
-		<stop  offset="0.8508" style="stop-color:#B6FFF1"/>
-		<stop  offset="0.9156" style="stop-color:#FFFFFF"/>
+	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="319.6154" y1="587.4909" x2="319.6154" y2="426.3424">
+		<stop  offset="0.6092" style="stop-color:#000000"/>
+		<stop  offset="0.6155" style="stop-color:#0D0D0D"/>
+		<stop  offset="0.6582" style="stop-color:#626262"/>
+		<stop  offset="0.6959" style="stop-color:#A5A5A5"/>
+		<stop  offset="0.7273" style="stop-color:#D6D6D6"/>
+		<stop  offset="0.751" style="stop-color:#F4F4F4"/>
+		<stop  offset="0.7645" style="stop-color:#FFFFFF"/>
 	</linearGradient>
 	<path fill="url(#SVGID_1_)" d="M319.329,587.47c1.547-10.375,1.133-10.45,0.745-21.005c-0.025-0.671-0.01-1.349-0.107-2.009
 		c-0.151-1.032-0.55-1.522-1.716-1.202c-14.617,4.015-28.616,2.108-41.928-5.365c-7.747-4.349-14.113-10.362-18.349-18.702
@@ -77,6 +71,6 @@
 		c-5.155-4.977-10.906-8.804-18.197-9.631c-1.49-0.169-1.774,0.446-1.532,1.652c0.353,1.756,0.624,3.56,1.234,5.227
 		c5.139,14.048,15.355,22.362,29.047,26.684C294.365,521.906,294.886,521.849,295.646,521.906z"/>
 </g>
-<text transform="matrix(1.0205 0 0 1 217.6924 632.0312)" fill="#B83838" font-family="'BirchStd'" font-size="115.8748">verKauf</text>
-<rect x="256.86" y="638.619" fill="#188772" width="147.099" height="3.002"/>
+<text transform="matrix(1.0205 0 0 1 217.6924 632.0312)" fill="#070101" font-family="'BirchStd'" font-size="115.8748">verKauf</text>
+<rect x="256.86" y="638.619" fill="#FFFFFF" width="147.099" height="3.002"/>
 </svg>

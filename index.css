@@ -12,6 +12,10 @@ body    {
 /*    background: #dfdfdf; */
 }
 
+.brand {
+    color: #b83838;
+}
+
 .app    {
 /*    background-color: green;*/
     margin: 0px;
@@ -62,6 +66,7 @@ nav {
     line-height: 40px;
     height: 40px;
     text-decoration: none;
+    width: 100%;
 /*    bottom: 45px;*/
 }
 
@@ -75,6 +80,7 @@ nav {
     text-decoration: none;
     /*    bottom: 45px;*/
 }
+
 
 #transaction_productBarcode_btn {
     background: #003366;
@@ -100,24 +106,137 @@ nav {
 @media screen and (min-width: 768px)
 {
     body {
-        background: white;
+        background: lightgray;
         text-align: center;
+/*
+        background-image: url("desktop_icon.png");
+        background-repeat: no-repeat;
+*/
     }
     
     #addproduct_save_btn {
         background: black;
+        width: 70%;
+        bottom: 40px;
     }
     
     .nav {
         display: black;
         line-height: 50px;
         height: 50px;
-}
+    }
+    
+    .app{
+        background: bla
+    }
+    
+    
+    #login_btn {
+        background: black;
+    }
+    
+    .desktop_logo{
+        display: block;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        content: url("desktop_icon.png");
+        background-repeat: no-repeat;
+    }
+    
+    /* label underline focus color */
+   .input-field input[type=text] {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+    
+        /* label underline focus color */
+   .input-field input[type=password] {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+    
+            /* label underline focus color */
+   .input-field input[type=number] {
+     border-bottom: 1px solid white;
+     box-shadow: 0 1px 0 0 white;
+   }
+    
+   /* label focus color */
+   .input-field input[type=text] + label {
+     color: black;
+   }
+    
+    /* label focus color */
+   .input-field input[type=number] + label {
+     color: black;
+   }
+    
+       /* label focus color */
+   .input-field input[type=password] + label {
+     color: black;
+   }
+    
+      /* label focus color */
+   .input-field input[type=text]:active + label {
+     color: red;
+   }
+    
+    .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+    
+/*    .list_item {*/
+/*        background: black;*/
+/*        color: black;*/
+/*    }*/
+    
+    .nav {
+        background: black;
+        color: white;
+    }
+    
+    .outter {
+        background: white;
+        color: white;
+    }
+    
+    #update_product_price_btn {
+        background: black;
+        color: white;
+        display: block;
+/*        padding: 0px 10px;*/
+        line-height: 40px;
+        height: 40px;
+        text-decoration: none;
+    }
+    
+    .btn-floating btn-large {
+        background: black;
+    }
+    
+    .show_inventory {
+        background: black;
+    }
+    
+    #menu_btn, #add_btn, #cloud_btn {
+        background: black;
+    }
+    
+    .left {
+        color: white;
+    }
+    
+    #addproduct_barcodescan_btn {
+        background: black;
+    }
+    
+    #transaction_save_btn {
+        background: black;
+        color: white;
+    }
     
 }
-
-
-
 
 
 

@@ -16,9 +16,9 @@
         <div class="app">
             
             <div class="navbar-fixed">
-             <nav style="">
-                <div class="nav" style="">
-                    <div class="navbar-fixed">
+             <nav class="outter">
+                <div class="nav">
+<!--                    <div class="navbar-fixed">-->
                       <ul class="">
                         <li>
                             <a href="home_page.html"><i style="color:#777777" class="fa fa-chevron-left fa-lg"> Home</i></a></li>
@@ -26,33 +26,34 @@
                         <ul class="right">
                             <li><a class="brand" style="color:#b83838">New Product</a></li>
                         </ul>
-                    </div>
+<!--                    </div>-->
                 </div>
               </nav>
             </div>
             
+            <div class="container">
             <div class="row">
                 
                 <h3>verKauf</h3>
                 
                 <form class="col s12">
                     
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12">
                         <input id="productName" type="text" class="validate" length="12" />
                         <label for="productName">Product Name</label>
                     </div>
                     
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12">
                         <input id="productQuantity" type="number" class="validate" />
                         <label for="productQuantity">Product Quantity</label>
                     </div>
                     
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12">
                         <input id="productPrice" type="text" class="validate" />
                         <label for="productPrice">Product Price</label>
                     </div>
                     
-                    <div class="file-field input-field col s12 m6 l6">
+                    <div class="file-field input-field col s12">
                         <div class="btn" id="addproduct_barcodescan_btn">
                             <span><i class="fa fa-camera-retro"></i></span>
                         </div>
@@ -62,12 +63,12 @@
                         </div>
                     </div>
                     
-                    <div class="message">
-                        
+                    <div id="addproduct_save_container" class="input-field col s12">
+                        <a style="" class="waves-effect waves-light btn" id="addproduct_save_btn" href="#">Save </a>
                     </div>
                     
-                    <div id="addproduct_save_container" class="input-field col s12 m6 l6">
-                        <a style="width:100%" class="waves-effect waves-light btn" id="addproduct_save_btn" href="#">Save </a>
+                     <div class="message">
+                        
                     </div>
                     
 <!--
@@ -79,14 +80,13 @@
                     </div>
 -->
                     
-<!--
                     <div style="text-align:center" class="input-field col s12">
                         <i class="fa fa-spinner fa-lg fa-spin"></i>
                     </div>
--->
                     
                 </form>
             
+            </div>
             </div>
             
         </div>

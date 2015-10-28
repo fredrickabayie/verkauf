@@ -28,16 +28,16 @@
         <div class="app">
             
             <div class="navbar-fixed">
-             <nav style="">
-                <div class="nav" style="">
-                    <div class="navbar-fixed">
+             <nav class="outter">
+                <div class="nav">
+<!--                    <div id="half" style="background:white" class="navbar-fixed">-->
                       <ul class="left">
-                            <li><a class="brand" style="color:#b83838">verKauf</a></li>
+                            <li><a class="brand" style="color:#b83838" id="sometext">verKauf</a></li>
                       </ul>
                         <ul class="right">
                             <li><a href="#!" class="brand" style="color:#b83838"><i class="fa fa-gears fa-lg"></i></a></li>
                         </ul>
-                    </div>
+<!--                    </div>-->
                 </div>
               </nav>
             </div>
@@ -67,11 +67,16 @@
             <div class="row">
                 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
                     <a id="float_btn" class="btn-floating btn-large red floating_edit_btn">
-                      <i class="fa fa-bars"></i>
+                      <i id="menu_btn" class="fa fa-bars"></i>
                     </a>
                     <ul>
-                      <li><a href="addproduct_page.html" class="btn-floating green"><i class="fa fa-plus"></i></i></a></li>
-                      <li><a href="editproduct_page.html" class="btn-floating blue darken-1"><i class="fa fa-cloud"></i></a></li>
+                      <li>
+                          <a href="addproduct_page.html" class="btn-floating green"><i id="add_btn" class="fa fa-plus">
+                              </i>
+                              </i>
+                        </a>
+                    </li>
+                      <li><a href="#" class="btn-floating blue darken-1"><i id="cloud_btn" class="fa fa-cloud"></i></a></li>
 <!--
                       <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
                       <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
