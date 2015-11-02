@@ -1,7 +1,7 @@
 
 body    {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
     font-weight: 300;
@@ -18,15 +18,15 @@ body    {
 
 .app    {
 /*    background-color: green;*/
-    margin: 0px;
-    padding: 0px 0px 4px 0px;
-    top: 0px;
+    margin: 0;
+    padding: 0 0 4px 0;
+    top: 0;
     height: inherit;
 /*    text-align: center;*/
 }
 
 #addproduct_save_container  {
-    position:fixed;right:0px;bottom:23px;padding-top:15px;margin-bottom:0;z-index:998;
+    position:fixed;right:0;bottom:23px;padding-top:15px;margin-bottom:0;z-index:998;
 /*    background: black;*/
 /*    background-color: aqua;*/
 /*    position: relative;*/
@@ -62,7 +62,7 @@ nav {
     background: #b83838;
     color: #fff;
 /*    display: block;*/
-    padding: 0px 10px;
+    padding: 0 10px;
     line-height: 40px;
     height: 40px;
     text-decoration: none;
@@ -74,7 +74,7 @@ nav {
     background: #003366;
     color: #fff;
     /*    display: block;*/
-    padding: 0px 10px;
+    padding: 0 10px;
     line-height: 40px;
     height: 40px;
     text-decoration: none;
@@ -82,16 +82,30 @@ nav {
 }
 
 
+#transact_btn {
+    background: #003366;
+    color: #fff;
+    /*    display: block;*/
+    padding: 0 10px;
+    line-height: 40px;
+    height: 40px;
+    text-decoration: none;
+}
+
+
 #transaction_productBarcode_btn {
     background: #003366;
 }
 
+#transact_btn_container {
+    position:fixed;right:0;bottom:23px;padding-top:15px;margin-bottom:0;z-index:998;
+}
 
 #login_btn  {
     background: #b83838;
     color: #fff;
     display: block;
-    padding: 0px 10px;
+    padding: 0 10px;
     line-height: 40px;
     height: 40px;
     text-decoration: none;
@@ -138,6 +152,7 @@ nav {
     .desktop_logo{
         display: block;
         -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
         box-sizing: border-box;
         content: url("desktop_icon.png");
         background-repeat: no-repeat;

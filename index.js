@@ -1,4 +1,4 @@
-/*global console, $, alert, cordova, JQuery, timer*/
+/*global console, $, alert, cordova, JQuery, timer, Connection*/
 function sendRequest(u) {
     "use strict";
     var obj, result;
@@ -6,6 +6,47 @@ function sendRequest(u) {
     result = $.parseJSON(obj.responseText);
     return result;
 }
+
+
+////Function to test for network connection
+//function checkConnection() {
+//    "use strict";
+//    var networkState, states;
+//    
+//    networkState = navigator.connection.type;
+//
+//    states = {};
+//    
+//    states[Connection.UNKNOWN]  = 'Unknown connection';
+//    states[Connection.ETHERNET] = 'Ethernet connection';
+//    states[Connection.WIFI]     = 'WiFi connection';
+//    states[Connection.CELL_2G]  = 'Cell 2G connection';
+//    states[Connection.CELL_3G]  = 'Cell 3G connection';
+//    states[Connection.CELL_4G]  = 'Cell 4G connection';
+//    states[Connection.CELL]     = 'Cell generic connection';
+//    states[Connection.NONE]     = 'No network connection';
+//
+//    alert('Connection type: ' + states[networkState]);
+//}
+//
+//checkConnection();
+//
+//function onOffline() {
+//    // Handle the offline event
+//    "use strict";
+//    alert('Device is offline');
+//}
+//
+//document.addEventListener("offline", onOffline, false);
+//
+//
+//function onOnline() {
+//    // Handle the offline event
+//    "use strict";
+//    alert('Device is online');
+//}
+//
+//document.addEventListener("online", onOnline, false);
 
 
 $(function () {
@@ -72,13 +113,15 @@ $(function () {
         
         if (messenger.result === 1) {
             for (index in messenger.product) {
-                list += "<li style='' class='collection-item avatar list_item' onClick='edit_product_price(this.id)' id=" + messenger.product[index].productId + "," + messenger.product[index].productName + "," + messenger.product[index].productPrice + ">";
-                list += "<i class='fa fa-code circle'></i>";
-                list += "<span class='title'>" + messenger.product[index].productName + "</span>";
-                list += "<p>Qty " + messenger.product[index].productQuantity + "<br>";
-                list += "GHC " + messenger.product[index].productPrice + "</p>";
-                list += "<a href='#!' class='secondary-content'><i class='fa fa-check'></i></a>";
-                list += "</li>";
+                if (messenger.product.hasOwnProperty(index)) {
+                    list += "<li style='' class='collection-item avatar list_item' onClick='edit_product_price(this.id)' id=" + messenger.product[index].productId + "," + messenger.product[index].productName + "," + messenger.product[index].productPrice + ">";
+                    list += "<i class='fa fa-code circle'></i>";
+                    list += "<span class='title'>" + messenger.product[index].productName + "</span>";
+                    list += "<p>Qty " + messenger.product[index].productQuantity + "<br>";
+                    list += "GHC " + messenger.product[index].productPrice + "</p>";
+                    list += "<a href='#!' class='secondary-content'><i class='fa fa-check'></i></a>";
+                    list += "</li>";
+                }
             }
         }
         $(".show_inventory").html(list);
@@ -206,6 +249,100 @@ $(function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Function to handle the barcode scanner button
+$(function () {
+    "use strict";
+//    $("#transaction_productId").hide();
+    $("#transact_barcode_btn").click(function () {
+//        cordova.plugins.barcodeScanner.scan(
+//            function (result) {
+                
+                var productBarcode, url, messenger, tr;
+//                $("#transact_productBarcode").val(result.text);
+//                productBarcode = result.text;
+                
+                productBarcode= encodeURI(document.getElementById("transact_productBarcode").value);
+                url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+                
+//                url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+                
+                messenger = sendRequest(url);
+                tr = "";
+                if (messenger.result === 1) {
+                    tr += "<tr class='transact_id' id=" + messenger.productId + ">";
+                    tr += "<td>" + messenger.productName + "</td>";
+                    tr += "<td>" + messenger.productPrice + "</td>";
+                    tr += "<td><input type='number' value='1'/></td>";
+                    tr += "</tr>";
+                    
+                    $(".transact_list").prepend(tr);
+                    var test = encodeURI(document.getElementById("total_price").textContent);
+                    var total = parseFloat(test) + parseFloat(messenger.productPrice);
+                    $(".total_price").text(total);
+                    console.log(total);
+//                    $("#transaction_productId").val(messenger.productId);
+//                    $("#transaction_productName").val(messenger.productName);
+//                    $("#transaction_productQuantity").val(messenger.productQuantity);
+//                    $("#transaction_productPrice").val(messenger.productPrice);
+                    console.log($(".transact_id").attr("id"));
+                } else {
+                    $(".message").text(messenger.message);
+                }
+                
+                
+//            },
+//            function (error) {
+//                alert("Scanning failed: " + error);
+//            }
+//        );
+    });
+});
+
+//$(function() {
+//    
+//});
+
+//<tr>
+//<td>Alvin</td>
+//<td>$0.87</td>
+//<td>-</td>
+//</tr>
 
 
 

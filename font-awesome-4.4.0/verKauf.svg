@@ -4,7 +4,8 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="640px" height="1136px" viewBox="0 0 640 1136" enable-background="new 0 0 640 1136" xml:space="preserve">
 <g>
-	<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="319.6154" y1="587.4909" x2="319.6154" y2="426.3424">
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="235.6154" y1="523.5091" x2="235.6154" y2="684.6576" gradientTransform="matrix(1 0 0 -1 84 1111)">
 		<stop  offset="0.6092" style="stop-color:#000000"/>
 		<stop  offset="0.6155" style="stop-color:#0D0D0D"/>
 		<stop  offset="0.6582" style="stop-color:#626262"/>
@@ -72,5 +73,9 @@
 		c5.139,14.048,15.355,22.362,29.047,26.684C294.365,521.906,294.886,521.849,295.646,521.906z"/>
 </g>
 <text transform="matrix(1.0205 0 0 1 217.6924 632.0312)" fill="#070101" font-family="'BirchStd'" font-size="115.8748">verKauf</text>
-<rect x="256.86" y="638.619" fill="#FFFFFF" width="147.099" height="3.002"/>
+<rect x="256.86" y="638.619" fill="#0F0202" width="147.099" height="3.002"/>
+<polygon fill="#FFFFFF" points="324.734,545.313 325.065,545.929 324.734,546.723 323.676,547.648 322.288,548.904 321.098,549.896 
+	320.239,550.888 319.71,552.011 319.71,553.268 319.71,558.424 319.71,564.771 319.71,568.473 320.635,572.043 321.892,575.679 
+	322.883,578.72 323.676,580.901 324.007,580.901 326.651,569.663 330.354,554.788 330.75,553.73 330.75,552.673 330.221,551.284 
+	328.965,549.764 328.04,548.375 327.114,547.185 326.255,546.326 326.321,545.731 326.453,545.313 "/>
 </svg>

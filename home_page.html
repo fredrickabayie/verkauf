@@ -28,18 +28,32 @@
         <div class="app">
             
             <div class="navbar-fixed">
+                
+                <nav>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#!">First Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+          </ul>
+          <ul id="slide-out" class="side-nav">
+            <li><a href="#!">First Sidebar Link</a></li>
+            <li><a href="#!">Second Sidebar Link</a></li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        </nav>
+<!--
              <nav class="outter">
                 <div class="nav">
-<!--                    <div id="half" style="background:white" class="navbar-fixed">-->
+                    <div id="half" style="background:white" class="navbar-fixed">
                       <ul class="left">
                             <li><a class="brand" style="color:#b83838" id="sometext">verKauf</a></li>
                       </ul>
                         <ul class="right">
                             <li><a href="#!" class="brand" style="color:#b83838"><i class="fa fa-gears fa-lg"></i></a></li>
                         </ul>
-<!--                    </div>-->
+                    </div>
                 </div>
               </nav>
+-->
             </div>
             
             <div class="container">
@@ -73,7 +87,7 @@
                       <li>
                           <a href="addproduct_page.html" class="btn-floating green"><i id="add_btn" class="fa fa-plus">
                               </i>
-                              </i>
+<!--                              </i>-->
                         </a>
                     </li>
                       <li><a href="#" class="btn-floating blue darken-1"><i id="cloud_btn" class="fa fa-cloud"></i></a></li>
@@ -91,5 +105,14 @@
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
         <script type="text/javascript" src="index.js"></script>
+        
+        <script type="text/javascript">
+            $('.button-collapse').sideNav({
+                  menuWidth: 300, // Default is 240
+                  edge: 'left', // Choose the horizontal origin
+                  closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                }
+              );
+        </script>
     </body>
 </html>

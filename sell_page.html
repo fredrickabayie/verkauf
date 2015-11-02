@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css" media="screen,projection" />
+        <link rel="stylesheet" type="text/css" href="font-awesome-4.4.0/css/font-awesome.min.css" />
+        <title>Transaction</title>
+    </head>
+    <body>
+        
+        <div class="app">
+            
+            <div style="background:black; color:black" class="navbar-fixed">
+             <nav style="">
+                <div class="nav" style="">
+                    <div class="navbar-fixed">
+                      <ul class="left">
+                            <li><a class="brand" style="color:#b83838">Toal Price: GHC <span class="total_price" id="total_price">00.00</span></a></li>
+                        </ul>
+                        <ul class="right">
+                            <li><a class="brand" style="color:#b83838">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+              </nav>
+            </div>
+            
+            <div class="row">
+                
+                <form class="col s12">
+
+<!--
+                    <div class="input-field col s6">
+                        <input id="transaction_productName" type="text"/>
+                        <label for="">Product Name</label>
+                    </div>
+                    
+                    <div class="input-field col s6">
+                        <input id="transaction_productQuantity" type="number" disabled />
+                        <label for="transaction_productQuantity">Product Quantity</label>
+                    </div>
+                    
+                    <div class="input-field col s6">
+                        <input id="transaction_productPrice" type="text" class="validate" disabled/>
+                        <label for="transaction_productPrice">Product Price</label>
+                    </div>
+-->
+                    
+<!--
+                    <div class="input-field col s12 m12 l6">
+                        <input id="transaction_customerNumber" type="number" class="validate"/>
+                        <label for="transaction_customerNumber">Customer Number</label>
+                    </div>
+-->
+                    
+                    <div style="" class="input-field col s12">
+<!--                        <hr>-->
+                          <table class="centered highlight" style="height:20px;overflow:hidden;">
+                            <thead>
+                              <tr style="color:red;">
+                                  <th data-field="id">Name</th>
+                                  <th data-field="price">Price</th>
+                                  <th data-field="price">Qty</th>
+<!--                                  <th data-field="price">Remove</th>-->
+                              </tr>
+                            </thead>
+
+                            <tbody class="transact_list">
+                                
+                            </tbody>
+                          </table>
+                    </div>
+
+                    
+                    <input id="transaction_productId" type="text" class="validate" />
+                    
+<!--
+                    <div class="message">
+                        
+                    </div>
+-->
+                    
+                     <div class="file-field input-field col s12">
+                        <div class="btn" id="transact_barcode_btn">
+                            <span><i class="fa fa-camera-retro"></i></span>
+                        </div>
+                        
+                        <div class="file-path-wrapper">
+                            <input id="transact_productBarcode" type="text" class="validate" placeholder="Product Barcode"/>
+                        </div>
+                    </div>
+                    
+                    <div id="customerNumberModal" class="modal bottom-sheet">
+                    <div class="modal-content">
+                      <h4 class="modal_product_name"></h4>
+                      <div class="input-field col s12 m6 l6">
+                        <input id="customerNumber" type="number" class="validate" length="10" />
+                          <label for="customerNumber">Please enter customer number</label>
+<!--                        <input id="edit_productId" type="text" class="validate" />-->
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#" style="width:100%" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn">SELL</a>
+                    </div>
+                  </div>
+                    
+                    
+                    <div id="transact_btn_container" class="input-field col s12">
+                        <a style="width:100%" class="waves-effect waves-light btn" id="transact_btn" href="#">TRANSACT</a>
+                    </div>
+                    
+                    
+                </form>
+            
+            </div>
+            
+        </div>
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript" src="js/plugins/Flashlight.js"></script>
+        
+        <script type="text/javascript">
+            $('#transact_btn').click(function(event) {
+                "use strict";
+                event.preventDefault;
+                $('#customerNumberModal').openModal();
+            });
+            
+        </script>
+    </body>
+</html>
