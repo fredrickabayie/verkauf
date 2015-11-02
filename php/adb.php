@@ -49,6 +49,16 @@
         {
             return mysql_fetch_assoc ( $this->result );
         }
+        
+        
+       /**
+        * returns number of rows in current dataset
+        */
+        function get_num_rows ( )
+        {
+            return mysql_num_rows($this->result);
+        }
+
 
      	/**
      	*cloding database connection

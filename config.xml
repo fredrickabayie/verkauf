@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.fredrickabayie.pos" versioncode = "11" version = "1.0.0">
+    <name>verKauf</name>
+    <description>
+        A point of sale application
+    </description>
+    <author href="http://www.ashesi.edu.gh" email="fredrick.abayie@ashesi.edu.gh">
+        Fredrick Abayie
+    </author>
+    
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    
+    <allow-navigtion href="*" />
+    <allow-intent href="*" />
+    <access origin="*" />
+    
+    <gap:plugin name="net.roughshod.plugins.barcodescanner" version="3.0.0" />
+    <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />
+    <gap:plugin name="nl.x-services.plugins.flashlight" version="2.0.1" />
+    
+     <icon src="icon.png" gap:platform="android" />
+     <gap:splash src="splash.png" gap:platform="android" />
+</widget>

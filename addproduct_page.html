@@ -1,37 +1,5 @@
-<!--
-<?php
-$msie = strpos ( $_SERVER ["HTTP_USER_AGENT"], 'MSIE' ) > 0;
-if ( !$msie ) {
-  header ( "Content-Type: application/xhtml+xml; charset=UTF-8" );
-} else {
-  header ("Content-Type: text/html; charset=UTF-8");
-}
-?>
--->
-
-<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN"
-"http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
@@ -47,42 +15,45 @@ if ( !$msie ) {
         
         <div class="app">
             
-             <nav style="">
-                    <div class="nav" style="">
-                        <div class="navbar-fixed">
-                          <ul class="">
-                            <li>
-                                <a href="index.html"><i style="color:#777777" class="fa fa-chevron-left fa-lg"> Home</i></a></li>
-                          </ul>
-                            <ul class="right">
-                                <li><a class="brand" style="color:#b83838">New Product</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                  </nav>
+            <div class="navbar-fixed">
+             <nav class="outter">
+                <div class="nav">
+<!--                    <div class="navbar-fixed">-->
+                      <ul class="">
+                        <li>
+                            <a href="home_page.html"><i style="color:#777777" class="fa fa-chevron-left fa-lg"> Home</i></a></li>
+                      </ul>
+                        <ul class="right">
+                            <li><a class="brand" style="color:#b83838">New Product</a></li>
+                        </ul>
+<!--                    </div>-->
+                </div>
+              </nav>
+            </div>
             
+            <div class="container">
             <div class="row">
                 
                 <h3>verKauf</h3>
                 
                 <form class="col s12">
                     
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12">
                         <input id="productName" type="text" class="validate" length="12" />
                         <label for="productName">Product Name</label>
                     </div>
                     
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12">
                         <input id="productQuantity" type="number" class="validate" />
                         <label for="productQuantity">Product Quantity</label>
                     </div>
                     
-                    <div class="input-field col s12 m6 l6">
+                    <div class="input-field col s12">
                         <input id="productPrice" type="text" class="validate" />
                         <label for="productPrice">Product Price</label>
                     </div>
                     
-                    <div class="file-field input-field col s12 m6 l6">
+                    <div class="file-field input-field col s12">
                         <div class="btn" id="addproduct_barcodescan_btn">
                             <span><i class="fa fa-camera-retro"></i></span>
                         </div>
@@ -92,10 +63,12 @@ if ( !$msie ) {
                         </div>
                     </div>
                     
-                    <div class="message"></div>
+                    <div id="addproduct_save_container" class="input-field col s12">
+                        <a style="" class="waves-effect waves-light btn" id="addproduct_save_btn" href="#">Save </a>
+                    </div>
                     
-                    <div id="addproduct_save_container" class="input-field col s12 m6 l6">
-                        <a style="width:100%" class="waves-effect waves-light btn" id="addproduct_save_btn" href="#">Save </a>
+                     <div class="message">
+                        
                     </div>
                     
 <!--
@@ -114,7 +87,9 @@ if ( !$msie ) {
 -->
                     
                 </form>
+                <button class="light" >Light</button>
             
+            </div>
             </div>
             
         </div>
@@ -123,6 +98,28 @@ if ( !$msie ) {
         <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
         <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
         <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript">
+            $(function ( ) {
+                $(".light").click(function() {
+                                window.plugins.flashlight.available(function(isAvailable) {
+              if (isAvailable) {
+
+                // switch on
+                window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
+
+                // switch off after 3 seconds
+                setTimeout(function() {
+                  window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
+                }, 3000);
+
+              } else {
+                alert("Flashlight not available on this device");
+              }
+            });
+                });
+            });
+
+        </script>
     </body>
 </html>
 
