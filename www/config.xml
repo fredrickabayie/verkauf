@@ -1,11 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns = "http://www.w3.org/ns/widgets" xmlns:gap = "http://phonegap.com/ns/1.0" id = "com.fredrickabayie.ntf" versioncode = "11" version = "1.6.0">
-    <name>Okay</name>
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>verKauf</name>
     <description>
         A point of sale application
     </description>
-    <author href="http://www.ashesi.edu.gh" email="fredrick.abayie@ashesi.edu.gh">
+    <author email="fredrick.abayie@ashesi.edu.gh" href="https://github.com/fredrickabayie/verkauf">
         Fredrick Abayie
     </author>
+    
     <gap:plugin name="net.roughshod.plugins.barcodescanner" version="3.0.0" />
+    
+    <content src="index.html" />
+    
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <engine name="android" spec="~4.1.1" />
 </widget>
