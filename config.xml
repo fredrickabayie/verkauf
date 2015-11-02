@@ -15,9 +15,6 @@
     <access origin="*" />
     
     <gap:plugin name="net.roughshod.plugins.barcodescanner" version="3.0.0" />
-<!--    <gap:plugin name="org.apache.cordova.network-information" version="0.2.12" />-->
-<!--    <gap:plugin name="nl.x-services.plugins.flashlight" version="2.0.1" />-->
-    
     
      <icon src="icon.png" gap:platform="android" />
      <gap:splash src="splash.png" gap:platform="android" />
