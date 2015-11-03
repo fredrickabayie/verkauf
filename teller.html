@@ -30,7 +30,7 @@
             <ul style="background:lightgray" id="slide-out" class="side-nav">
                 <li style="height:150px;width:inherit; display:block">
                     <a style="">
-                        <img style="" src="splash.png" alt="profilepic" />
+                        <img style="" src="img/splash.png" alt="profilepic" />
                     </a>
                 </li>
 
@@ -119,10 +119,11 @@
             </div>
         </div>
 -->
-        <input type="number" class="validate" id="transact_productBarcode" />
-        <div class="row">
 
-            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <input type="number" class="validate" id="transact_productBarcode" />
+        <div class="row" style="background:lightgrey">
+
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px; background: lightgrey">
                 <a id="float_btn" class="z-depth-2 btn-floating btn-large red floating_edit_btn">
                     <i id="menu_btn" class="fa fa-bars"></i>
                 </a>
@@ -135,9 +136,9 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="fixed-action-btn" style="left: 24px; bottom:45px">
-                <a class="btn-flat white-text text-darken-2 grey">GH₵ <span class="total_transaction_price" id="total_transaction_price">00.00</span></a>
+        <div class="row" style="background:lightgrey">
+            <div class="fixed-action-btn" style="left: 24px; bottom:45px; background: lightgrey; width: 200px">
+                <a class="btn-flat white-text text-darken-2 grey tooltipped" data-position="top" data-delay="50" data-tooltip="Total Price">GH₵ <span class="total_transaction_price" id="total_transaction_price">00.00</span></a>
             </div>
         </div>
 
@@ -162,24 +163,24 @@
             return result;
         }
 
-//        function delete_transaction_product(id) {
-////            alert(id);
-//            var divContainer = $(this).parents("#okay");
-//            alert(divContainer);
-////            .remove();
-////            var icondelete = $(this).children("#transaction_productDelete_btn");
-//////            var id = $(this).attr("id");
-//////            console.log(id);
-//////            var string = 'cmd=2&task_id=' + id;
-//////
-////            icondelete.attr("class", "fa fa-trash-o fw");
-////            divContainer.slideUp('slow', function() {
-////                $(this).remove();
-////            });
-////
-////
-////            return false;
-//        }
+        //        function delete_transaction_product(id) {
+        ////            alert(id);
+        //            var divContainer = $(this).parents("#okay");
+        //            alert(divContainer);
+        ////            .remove();
+        ////            var icondelete = $(this).children("#transaction_productDelete_btn");
+        //////            var id = $(this).attr("id");
+        //////            console.log(id);
+        //////            var string = 'cmd=2&task_id=' + id;
+        //////
+        ////            icondelete.attr("class", "fa fa-trash-o fw");
+        ////            divContainer.slideUp('slow', function() {
+        ////                $(this).remove();
+        ////            });
+        ////
+        ////
+        ////            return false;
+        //        }
 
         function edit_transaction_productQuantity(id) {
             alert(id);
@@ -205,7 +206,7 @@
             messenger = sendRequest(url);
             div = "";
             if (messenger.result === 1) {
-                div += '<ul class="collection z-depth-2" id="displayContent">';
+                div += '<ul class="collection z-depth-2 transaction_container" id=' + messenger.productId + '>';
                 div += '<li class="collection-item avatar" id="okay">';
                 div += '<img src="img/icon.png" alt="P" class="circle">';
                 div += '<span class="title" style="font-size:20px; font-family: verdana;">' + messenger.productName + '</span>';
@@ -213,18 +214,17 @@
                 div += '<br> GHC <span class="transaction_productPrice">' + messenger.productPrice + '</span></p>';
                 div += '<a href="#!" class="secondary-content" onclick="delete_transaction_product(' + messenger.productId + ')"><i style="color:red" id="transaction_productDelete_btn" class="fa fa-trash-o fw"></i></a></li></ul>';
 
-
-                //                $(".transact_id").each(function(index, value) {
-                //                    console.log($(this).attr('id'));
-                //                });
-
-                $("#list_of_transaction_product").prepend(div);
+                $("#list_of_transaction_product").append(div);
                 test = encodeURI(document.getElementById("total_transaction_price").textContent);
                 total = parseFloat(test) + parseFloat(messenger.productPrice);
                 $("#total_transaction_price").text(total);
-                console.log(total);
+                
+                $(".transaction_container").each(function(index, value) {
+                    console.log($(this).attr('id'));
+                });
+//                console.log(total);
 
-                console.log($(".transact_id").attr("id"));
+//                console.log($(".transact_id").attr("id"));
             } else {
                 $(".message").text(messenger.message);
             }
