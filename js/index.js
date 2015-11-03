@@ -65,10 +65,10 @@ $(function () {
         messenger = sendRequest(url);
 
         if (messenger.result === 1) {
-            window.location.replace("home_page.html");
+            window.location.replace("../home_page.html");
 
         } else if (messenger.result === 2) {
-            window.location.replace("sale_page.html");
+            window.location.replace("../teller.html");
 
             return false;
         } else {
@@ -269,7 +269,7 @@ $(function () {
         //                productBarcode = result.text;
 
         productBarcode = encodeURI(document.getElementById("transact_productBarcode").value);
-//        url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+        //        url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
 
         url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
 
@@ -279,13 +279,13 @@ $(function () {
             tr += "<tr class='transact_id' id=" + messenger.productId + ">";
             tr += "<td>" + messenger.productName + "</td>";
             tr += "<td>" + messenger.productPrice + "</td>";
-            tr += "<td><input type='number' value='1'/></td>";
+            tr += "<td></td>";
             tr += "</tr>";
-            
-            sales_ids = ["66.8"];
-            sales_ids.push(messenger.productId);
-            console.log(sales_ids);
-        
+
+            $(".transact_id").each(function (index, value) {
+                console.log($(this).attr('id'));
+            });
+
             $(".transact_list").prepend(tr);
             test = encodeURI(document.getElementById("total_price").textContent);
             total = parseFloat(test) + parseFloat(messenger.productPrice);
@@ -308,13 +308,3 @@ $(function () {
         //        );
     });
 });
-
-//$(function() {
-//    
-//});
-
-//<tr>
-//<td>Alvin</td>
-//<td>$0.87</td>
-//<td>-</td>
-//</tr>

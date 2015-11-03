@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.4.0/css/font-awesome.min.css" />
+    <title>Teller</title>
+</head>
+
+<body>
+
+    <style type="text/css">
+        /*
+        .active {
+            background-color: black;
+            color: white;
+        }
+*/
+    </style>
+
+    <div class="app">
+
+        <nav>
+
+            <ul style="background:lightgray" id="slide-out" class="side-nav">
+                <li style="height:150px;width:inherit; display:block">
+                    <a style="">
+                        <img style="" src="splash.png" alt="profilepic" />
+                    </a>
+                </li>
+
+                <hr>
+
+                <li>
+                    <a class="active" href="#!"><i class="fa fa-home fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Store home</a>
+                </li>
+                <li>
+                    <a href="#!"><i class="fa fa-tags fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Sales</a>
+                </li>
+                <li>
+                    <a href="#!"><i class="fa fa-ticket fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Receipts</a>
+                </li>
+                <li>
+                    <a href="#!"><i class="fa fa-users fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Tellers</a>
+                </li>
+                <li>
+                    <a href="#!">My account</a>
+                </li>
+
+                <hr>
+
+                <li>
+                    <a href="index.html"><i class="fa fa-sign-out"></i> Sign out</a>
+                </li>
+                <li>
+                    <a href="#!">Settings <i class="fa fa-cogs"></i></a>
+                </li>
+                <li>
+                    <a href="#!">Help & Feedback</a>
+                </li>
+                <li>
+                    <a href="#!">About VerKauf</a>
+                </li>
+
+            </ul>
+
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i>
+            </a>
+
+        </nav>
+
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s3"><a style="color:#b83838;" class="active" href="#inventory">SALES</a></li>
+                <li class="tab col s3"><a href="#test2">receipts</a></li>
+
+            </ul>
+        </div>
+
+        <div id="inventory" class="col s12">
+            <div class="container" id="list_of_transaction_product">
+
+                <!--
+                <ul class="collection z-depth-2">
+                    <li class="collection-item avatar">
+                        <img src="img/icon.png" alt="P" class="circle">
+                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
+                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
+                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
+                        </p>
+                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
+                    </li>
+                </ul>
+-->
+
+
+            </div>
+
+        </div>
+
+        <!--
+        <div id="modal1" class="modal bottom-sheet">
+            <div class="modal-content">
+                <h4 class="modal_product_name"></h4>
+                <div class="input-field col s12 m6 l6">
+                    <input id="edit_product_price" type="text" class="validate" length="12" />
+                    <input id="edit_productId" type="text" class="validate" />
+                                            <label for="productName" id="edit_productId"></label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn">ADD</a>
+                <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn">CLOSE</a>
+            </div>
+        </div>
+-->
+        <input type="number" class="validate" id="transact_productBarcode" />
+        <div class="row">
+
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                <a id="float_btn" class="z-depth-2 btn-floating btn-large red floating_edit_btn">
+                    <i id="menu_btn" class="fa fa-bars"></i>
+                </a>
+                <ul>
+                    <li><a href="#" class="btn-floating blue darken-1" id="transaction_productScan"><i class="fa fa-qrcode" onclick="transaction_productScan()"></i></a></li>
+                    <li>
+                        <a class="btn-floating green"><i id="" class="fa fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="fixed-action-btn" style="left: 24px; bottom:45px">
+                <a class="btn-flat white-text text-darken-2 grey">GH₵ <span class="total_transaction_price" id="total_transaction_price">00.00</span></a>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <script type="text/javascript">
+        $(".button-collapse").sideNav();
+
+        function sendRequest(u) {
+            "use strict";
+            var obj, result;
+            obj = $.ajax({
+                url: u,
+                async: false
+            });
+            result = $.parseJSON(obj.responseText);
+            return result;
+        }
+
+//        function delete_transaction_product(id) {
+////            alert(id);
+//            var divContainer = $(this).parents("#okay");
+//            alert(divContainer);
+////            .remove();
+////            var icondelete = $(this).children("#transaction_productDelete_btn");
+//////            var id = $(this).attr("id");
+//////            console.log(id);
+//////            var string = 'cmd=2&task_id=' + id;
+//////
+////            icondelete.attr("class", "fa fa-trash-o fw");
+////            divContainer.slideUp('slow', function() {
+////                $(this).remove();
+////            });
+////
+////
+////            return false;
+//        }
+
+        function edit_transaction_productQuantity(id) {
+            alert(id);
+        }
+
+
+        function transaction_productScan() {
+            "use strict";
+            //    $("#transaction_productId").hide();
+            //                $("#transact_barcode_btn").click(function() {
+            //        cordova.plugins.barcodeScanner.scan(
+            //            function (result) {
+
+            var productBarcode, url, messenger, div, test, total, sales_ids;
+            //                $("#transact_productBarcode").val(result.text);
+            //                productBarcode = result.text;
+
+            productBarcode = encodeURI(document.getElementById("transact_productBarcode").value);
+            //        url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+
+            url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+
+            messenger = sendRequest(url);
+            div = "";
+            if (messenger.result === 1) {
+                div += '<ul class="collection z-depth-2" id="displayContent">';
+                div += '<li class="collection-item avatar" id="okay">';
+                div += '<img src="img/icon.png" alt="P" class="circle">';
+                div += '<span class="title" style="font-size:20px; font-family: verdana;">' + messenger.productName + '</span>';
+                div += '<p style="font-size:15px">QTY <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity()"><i class="fa fa-pencil-square-o fw"></i></a>';
+                div += '<br> GHC <span class="transaction_productPrice">' + messenger.productPrice + '</span></p>';
+                div += '<a href="#!" class="secondary-content" onclick="delete_transaction_product(' + messenger.productId + ')"><i style="color:red" id="transaction_productDelete_btn" class="fa fa-trash-o fw"></i></a></li></ul>';
+
+
+                //                $(".transact_id").each(function(index, value) {
+                //                    console.log($(this).attr('id'));
+                //                });
+
+                $("#list_of_transaction_product").prepend(div);
+                test = encodeURI(document.getElementById("total_transaction_price").textContent);
+                total = parseFloat(test) + parseFloat(messenger.productPrice);
+                $("#total_transaction_price").text(total);
+                console.log(total);
+
+                console.log($(".transact_id").attr("id"));
+            } else {
+                $(".message").text(messenger.message);
+            }
+
+
+            //            },
+            //            function (error) {
+            //                alert("Scanning failed: " + error);
+            //            }
+            //        );
+            //                });
+        }
+    </script>
+
+</body>
+
+</html>
