@@ -1,77 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-        <link rel="stylesheet" type="text/css" href="index.css" />
-        <link rel="stylesheet" type="text/css" href="materialize/css/materialize.min.css" media="screen,projection" />
-        <link rel="stylesheet" type="text/css" href="font-awesome-4.4.0/css/font-awesome.min.css" />
-        <title>Verkauf</title>
-    </head>
-    <body>
-        
-        <div class="app">
-            
-            <div class="navbar-fixed">
-             <nav class="outter">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="assets/materialize/css/materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" href="assets/font-awesome-4.4.0/css/font-awesome.min.css" />
+    <title>Verkauf</title>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <div class="navbar-fixed">
+            <nav class="outter">
                 <div class="nav">
-<!--                    <div class="navbar-fixed">-->
-                      <ul class="">
+                    <!--                    <div class="navbar-fixed">-->
+                    <ul class="">
                         <li>
                             <a href="home_page.html"><i style="color:#777777" class="fa fa-chevron-left fa-lg"> Home</i></a></li>
-                      </ul>
-                        <ul class="right">
-                            <li><a class="brand" style="color:#b83838">New Product</a></li>
-                        </ul>
-<!--                    </div>-->
+                    </ul>
+                    <ul class="right">
+                        <li><a class="brand" style="color:#b83838">New Product</a></li>
+                    </ul>
+                    <!--                    </div>-->
                 </div>
-              </nav>
-            </div>
-            
-            <div class="container">
+            </nav>
+        </div>
+
+        <div class="container">
             <div class="row">
-                
+
                 <h3>verKauf</h3>
-                
+
                 <form class="col s12">
-                    
+
                     <div class="input-field col s12">
                         <input id="productName" type="text" class="validate" length="12" />
                         <label for="productName">Product Name</label>
                     </div>
-                    
+
                     <div class="input-field col s12">
                         <input id="productQuantity" type="number" class="validate" />
                         <label for="productQuantity">Product Quantity</label>
                     </div>
-                    
+
                     <div class="input-field col s12">
                         <input id="productPrice" type="text" class="validate" />
                         <label for="productPrice">Product Price</label>
                     </div>
-                    
+
                     <div class="file-field input-field col s12">
                         <div class="btn" id="addproduct_barcodescan_btn">
                             <span><i class="fa fa-camera-retro"></i></span>
                         </div>
-                        
+
                         <div class="file-path-wrapper">
-                            <input id="productBarcode" type="text" class="validate" placeholder="Product Barcode"  />
+                            <input id="productBarcode" type="text" class="validate" placeholder="Product Barcode" />
                         </div>
                     </div>
-                    
+
                     <div id="addproduct_save_container" class="input-field col s12">
                         <a style="" class="waves-effect waves-light btn" id="addproduct_save_btn" href="#">Save </a>
                     </div>
-                    
-                     <div class="message">
-                        
+
+                    <div class="message">
+
                     </div>
-                    
-<!--
+
+                    <!--
                     <div style="" class="input-field col s12">
                          <div class="chip">
                              Tag
@@ -79,49 +81,46 @@
                          </div>
                     </div>
 -->
-                    
-<!--
+
+                    <!--
                     <div style="text-align:center" class="input-field col s12">
                         <i class="fa fa-spinner fa-lg fa-spin"></i>
                     </div>
 -->
-                    
+
                 </form>
-                <button class="light" >Light</button>
-            
+                <button class="light">Light</button>
+
             </div>
-            </div>
-            
         </div>
-        
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
-        <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-        <script type="text/javascript" src="index.js"></script>
-        <script type="text/javascript">
-            $(function ( ) {
-                $(".light").click(function() {
-                                window.plugins.flashlight.available(function(isAvailable) {
-              if (isAvailable) {
 
-                // switch on
-                window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
+    </div>
 
-                // switch off after 3 seconds
-                setTimeout(function() {
-                  window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
-                }, 3000);
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="assets/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".light").click(function() {
+                window.plugins.flashlight.available(function(isAvailable) {
+                    if (isAvailable) {
 
-              } else {
-                alert("Flashlight not available on this device");
-              }
-            });
+                        // switch on
+                        window.plugins.flashlight.switchOn(); // success/error callbacks may be passed
+
+                        // switch off after 3 seconds
+                        setTimeout(function() {
+                            window.plugins.flashlight.switchOff(); // success/error callbacks may be passed
+                        }, 3000);
+
+                    } else {
+                        alert("Flashlight not available on this device");
+                    }
                 });
             });
+        });
+    </script>
+</body>
 
-        </script>
-    </body>
 </html>
-
-
-

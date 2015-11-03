@@ -1,5 +1,4 @@
-
-body    {
+body {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -9,67 +8,63 @@ body    {
     font-size: 20px;
     font-family: 'Lato', sans-serif;
     color: #535353;
-/*    background: #dfdfdf; */
+    /*    background: #dfdfdf; */
 }
-
 .brand {
     color: #b83838;
 }
-
-.app    {
-/*    background-color: green;*/
+.app {
+    /*    background-color: green;*/
     margin: 0;
     padding: 0 0 4px 0;
     top: 0;
     height: inherit;
-/*    text-align: center;*/
+    /*    text-align: center;*/
 }
-
-#addproduct_save_container  {
-    position:fixed;right:0;bottom:23px;padding-top:15px;margin-bottom:0;z-index:998;
-/*    background: black;*/
-/*    background-color: aqua;*/
-/*    position: relative;*/
-/*    top: 140px;*/
-/*    margin-top: inherit;*/
-/*    padding: 0px;*/
-/*    margin: 0px;*/
-/*    bottom: 45px;*/
+#addproduct_save_container {
+    position: fixed;
+    right: 0;
+    bottom: 23px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
+    /*    background: black;*/
+    /*    background-color: aqua;*/
+    /*    position: relative;*/
+    /*    top: 140px;*/
+    /*    margin-top: inherit;*/
+    /*    padding: 0px;*/
+    /*    margin: 0px;*/
+    /*    bottom: 45px;*/
 }
-
-.nav  {
+.nav {
     background-color: white;
     display: block;
     line-height: 50px;
     height: 50px;
 }
-
 nav {
-     display: block;
+    display: block;
     line-height: 30px;
     height: 30px;
 }
-
 #float_btn {
     background: #b83838;
 }
-
 #addproduct_barcodescan_btn {
     background: #b83838;
 }
-
-#addproduct_save_btn   {
+#addproduct_save_btn {
     background: #b83838;
     color: #fff;
-/*    display: block;*/
+    /*    display: block;*/
     padding: 0 10px;
     line-height: 40px;
     height: 40px;
     text-decoration: none;
     width: 100%;
-/*    bottom: 45px;*/
+    /*    bottom: 45px;*/
 }
-
 #transaction_save_btn {
     background: #003366;
     color: #fff;
@@ -80,8 +75,6 @@ nav {
     text-decoration: none;
     /*    bottom: 45px;*/
 }
-
-
 #transact_btn {
     background: #003366;
     color: #fff;
@@ -91,17 +84,18 @@ nav {
     height: 40px;
     text-decoration: none;
 }
-
-
 #transaction_productBarcode_btn {
     background: #003366;
 }
-
 #transact_btn_container {
-    position:fixed;right:0;bottom:23px;padding-top:15px;margin-bottom:0;z-index:998;
+    position: fixed;
+    right: 0;
+    bottom: 23px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 998;
 }
-
-#login_btn  {
+#login_btn {
     background: #b83838;
     color: #fff;
     display: block;
@@ -110,155 +104,117 @@ nav {
     height: 40px;
     text-decoration: none;
 }
-
-
-.floating_edit_btn{
+.floating_edit_btn {
     background: white;
 }
-
-
-@media screen and (min-width: 768px)
-{
+@media screen and (min-width: 768px) {
     body {
         background: lightgray;
         text-align: center;
-/*
+        /*
         background-image: url("desktop_icon.png");
         background-repeat: no-repeat;
 */
     }
-    
     #addproduct_save_btn {
         background: black;
         width: 70%;
         bottom: 40px;
     }
-    
     .nav {
         display: black;
         line-height: 50px;
         height: 50px;
     }
-    
-    .app{
+    .app {
         background: bla
     }
-    
-    
     #login_btn {
         background: black;
     }
-    
-    .desktop_logo{
+    .desktop_logo {
         display: block;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        content: url("desktop_icon.png");
+        content: url("../img/desktop_icon.png");
         background-repeat: no-repeat;
     }
-    
     /* label underline focus color */
-   .input-field input[type=text] {
-     border-bottom: 1px solid white;
-     box-shadow: 0 1px 0 0 white;
-   }
-    
-        /* label underline focus color */
-   .input-field input[type=password] {
-     border-bottom: 1px solid white;
-     box-shadow: 0 1px 0 0 white;
-   }
-    
-            /* label underline focus color */
-   .input-field input[type=number] {
-     border-bottom: 1px solid white;
-     box-shadow: 0 1px 0 0 white;
-   }
-    
-   /* label focus color */
-   .input-field input[type=text] + label {
-     color: black;
-   }
-    
+    .input-field input[type=text] {
+        border-bottom: 1px solid white;
+        box-shadow: 0 1px 0 0 white;
+    }
+    /* label underline focus color */
+    .input-field input[type=password] {
+        border-bottom: 1px solid white;
+        box-shadow: 0 1px 0 0 white;
+    }
+    /* label underline focus color */
+    .input-field input[type=number] {
+        border-bottom: 1px solid white;
+        box-shadow: 0 1px 0 0 white;
+    }
     /* label focus color */
-   .input-field input[type=number] + label {
-     color: black;
-   }
-    
-       /* label focus color */
-   .input-field input[type=password] + label {
-     color: black;
-   }
-    
-      /* label focus color */
-   .input-field input[type=text]:active + label {
-     color: red;
-   }
-    
+    .input-field input[type=text] + label {
+        color: black;
+    }
+    /* label focus color */
+    .input-field input[type=number] + label {
+        color: black;
+    }
+    /* label focus color */
+    .input-field input[type=password] + label {
+        color: black;
+    }
+    /* label focus color */
+    .input-field input[type=text]:active + label {
+        color: red;
+    }
     .input-field input[type=text].valid {
-     border-bottom: 1px solid #000;
-     box-shadow: 0 1px 0 0 #000;
-   }
-    
-/*    .list_item {*/
-/*        background: black;*/
-/*        color: black;*/
-/*    }*/
-    
+        border-bottom: 1px solid #000;
+        box-shadow: 0 1px 0 0 #000;
+    }
+    /*    .list_item {*/
+    /*        background: black;*/
+    /*        color: black;*/
+    /*    }*/
     .nav {
         background: black;
         color: white;
     }
-    
     .outter {
         background: white;
         color: white;
     }
-    
     #update_product_price_btn {
         background: black;
         color: white;
         display: block;
-/*        padding: 0px 10px;*/
+        /*        padding: 0px 10px;*/
         line-height: 40px;
         height: 40px;
         text-decoration: none;
     }
-    
     .btn-floating btn-large {
         background: black;
     }
-    
     .show_inventory {
         background: black;
     }
-    
-    #menu_btn, #add_btn, #cloud_btn {
+    #menu_btn,
+    #add_btn,
+    #cloud_btn {
         background: black;
     }
-    
     .left {
         color: white;
     }
-    
     #addproduct_barcodescan_btn {
         background: black;
     }
-    
     #transaction_save_btn {
         background: black;
         color: white;
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
