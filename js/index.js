@@ -264,14 +264,14 @@ $(function () {
         //        cordova.plugins.barcodeScanner.scan(
         //            function (result) {
 
-        var productBarcode, url, messenger, tr;
+        var productBarcode, url, messenger, tr, test, total, sales_ids;
         //                $("#transact_productBarcode").val(result.text);
         //                productBarcode = result.text;
 
         productBarcode = encodeURI(document.getElementById("transact_productBarcode").value);
-        url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+//        url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
 
-        //                url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
+        url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
 
         messenger = sendRequest(url);
         tr = "";
@@ -281,10 +281,14 @@ $(function () {
             tr += "<td>" + messenger.productPrice + "</td>";
             tr += "<td><input type='number' value='1'/></td>";
             tr += "</tr>";
-
+            
+            sales_ids = ["66.8"];
+            sales_ids.push(messenger.productId);
+            console.log(sales_ids);
+        
             $(".transact_list").prepend(tr);
-            var test = encodeURI(document.getElementById("total_price").textContent);
-            var total = parseFloat(test) + parseFloat(messenger.productPrice);
+            test = encodeURI(document.getElementById("total_price").textContent);
+            total = parseFloat(test) + parseFloat(messenger.productPrice);
             $(".total_price").text(total);
             console.log(total);
             //                    $("#transaction_productId").val(messenger.productId);
