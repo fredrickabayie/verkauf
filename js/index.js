@@ -68,7 +68,7 @@ $(function () {
             window.location.replace("../home_page.html");
 
         } else if (messenger.result === 2) {
-            window.location.replace("../teller.html");
+            window.location.replace("teller.html");
 
             return false;
         } else {
