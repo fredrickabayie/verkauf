@@ -26,61 +26,61 @@
     <div class="app">
 
         <div class="navbar-fixed">
-        <nav style="background:#b83838">
+            <nav style="background:#b83838">
 
-            <ul id="slide-out" class="side-nav">
-                <li style="">
-                    <a style="height:inherit;width:inherit">
-                        <img style="height:inherit;width:inherit" src="img/icon.png" alt="profilepic" />
-                    </a>
-                </li>
+                <ul id="slide-out" class="side-nav">
+                    <li style="">
+                        <a style="height:inherit;width:inherit">
+                            <img style="height:inherit;width:inherit" src="img/icon.png" alt="profilepic" />
+                        </a>
+                    </li>
 
-                <hr>
+                    <hr>
 
-                <li>
-                    <a class="active" href="#!"><i class="fa fa-home fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Store home</a>
-                </li>
-                <li>
-                    <a href="#!"><i class="fa fa-tags fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Sales</a>
-                </li>
-                <li>
-                    <a href="#!"><i class="fa fa-ticket fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Receipts</a>
-                </li>
-                <li>
-                    <a href="#!"><i class="fa fa-users fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Transactions</a>
-                </li>
-                <li>
-                    <a href="#!">My account</a>
-                </li>
+                    <li>
+                        <a class="active" href="#!"><i class="fa fa-home fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Store home</a>
+                    </li>
+                    <li>
+                        <a href="#!"><i class="fa fa-tags fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Sales</a>
+                    </li>
+                    <li>
+                        <a href="#!"><i class="fa fa-ticket fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Receipts</a>
+                    </li>
+                    <li>
+                        <a href="#!"><i class="fa fa-users fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Transactions</a>
+                    </li>
+                    <li>
+                        <a href="#!">My account</a>
+                    </li>
 
-                <hr>
+                    <hr>
 
-                <li>
-                    <a href="index.html"><i class="fa fa-sign-out"></i> Sign out</a>
-                </li>
-<!--
+                    <li>
+                        <a href="index.html"><i class="fa fa-sign-out"></i> Sign out</a>
+                    </li>
+                    <!--
                 <li>
                     <a href="#!">Settings <i class="fa fa-cogs"></i></a>
                 </li>
 -->
-                <li>
-                    <a href="#!">Help & Feedback</a>
-                </li>
-                <li>
-                    <a href="#!">About VerKauf</a>
-                </li>
+                    <li>
+                        <a href="#!">Help & Feedback</a>
+                    </li>
+                    <li>
+                        <a href="#!">About VerKauf</a>
+                    </li>
 
-            </ul>
+                </ul>
 
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i>
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i>
             </a> &nbsp;&nbsp;&nbsp;&nbsp;Transactions
-            
-            <a href="#" style="float:right; margin-right:10px" onclick="nextVersion ()" id="search_btn"><i class="fa fa-search"></i></a>
 
-        </nav>
+                <a href="#" style="float:right; margin-right:10px" onclick="nextVersion ()" id="search_btn"><i class="fa fa-search"></i></a>
+
+            </nav>
         </div>
-        
-<!--
+
+        <!--
         <div class="col s12">
             <ul class="tabs">
                 <li class="tab col s3"><a style="color:#b83838;" class="active" href="#inventory">SALES</a></li>
@@ -93,8 +93,8 @@
         <div id="inventory" class="col s12">
             <div class="container" id="list_of_transaction_product">
 
-                
-<!--
+
+                <!--
                 <ul class="collection z-depth-1">
                     <li class="collection-item avatar">
                         <img src="img/icon.png" alt="P" class="circle">
@@ -111,30 +111,31 @@
 
         </div>
 
-<!--
-        
-        <div id="modal1" class="modal bottom-sheet">
+
+
+        <div id="confirm_transaction" class="modal modal-fixed-footer">
             <div class="modal-content">
-                <h4 class="modal_product_name"></h4>
-                <div class="input-field col s12 m6 l6">
-                    <input id="edit_product_price" type="text" class="validate" length="12" />
-                    <input id="edit_productId" type="text" class="validate" />
-                                            <label for="productName" id="edit_productId"></label>
+                <h4 class="modal_product_name">Customer Details</h4>
+                <div class="input-field col s12">
+                    <input id="customerNumber" type="number" class="validate" length="10" />
+                    <label for="customerNumber">Customer Number</label>
+<!--                    <input id="edit_productId" type="text" class="validate" />-->
+<!--                    <label for="productName" id="edit_productId"></label>-->
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn">ADD</a>
-                <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn">CLOSE</a>
+                <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn" onclick="sell_products()">SELL</a>
+                <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn" style="float:left">CLOSE</a>
             </div>
         </div>
--->
+
 
 
         <input type="number" class="validate" id="transact_productBarcode" />
         <div class="row">
 
             <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-                <a id="float_btn" class="z-depth-2 btn-floating btn-large red floating_edit_btn">
+                <a id="float_btn" class="z-depth-2 btn-floating btn-large floating_edit_btn">
                     <i id="menu_btn" class="fa fa-bars"></i>
                 </a>
                 <ul>
@@ -151,7 +152,7 @@
                 <a class="btn-flat btn-large white-text text-darken-2 grey grey lighten-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Total Price">GH₵ <span style="color:#b83838" class="total_transaction_price" id="total_transaction_price">00.00</span></a>
             </div>
         </div>
-<!--<output></output>-->
+        <!--<output></output>-->
     </div>
 
     <script type="text/javascript" src="cordova.js"></script>
@@ -160,27 +161,6 @@
     <script type="text/javascript" src="js/index.js"></script>
 
     <script type="text/javascript">
-//        $(".button-collapse").sideNav();
-        function nextVersion () {
-//            var link += '<a href="#">verKauf Pro</a>'; 
-            Materialize.toast('Functionality available in verKauf Pro', 4000);
-        }
-        
-        
-        function transaction_prompt() {
-            "use strict";
-            alert("prompt sale");
-        }
-        
-        
-        $('.button-collapse').sideNav({
-              menuWidth: 300, // Default is 240
-              edge: 'left', // Choose the horizontal origin
-              closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-            }
-          );
-        
-
         function sendRequest(u) {
             "use strict";
             var obj, result;
@@ -191,6 +171,68 @@
             result = $.parseJSON(obj.responseText);
             return result;
         }
+
+        //        $(".button-collapse").sideNav();
+        function nextVersion() {
+            //            var link += '<a href="#">verKauf Pro</a>'; 
+            Materialize.toast('Functionality available in verKauf Pro', 4000);
+        }
+        
+        
+        
+
+        function sell_products() {
+            var store, total, ids, qty, customerNumber, url, messenger;
+            store = [];
+
+            $(".transaction_container").each(function(index, value) {
+                ids = $(this).attr("id");
+                qty = $(this).find(".transaction_productQuantity").text();
+                store.push(ids);
+
+                alert(index + " " + value + " Id is " + ids + " QTY is " + qty);
+            });
+
+            alert(store);
+
+            total = $(".total_transaction_price").text();
+
+            alert(total);
+
+            customerNumber = "0209339957";
+
+            url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=make_transaction&customerNumber=" + customerNumber + "&productId=" + store + "&total=" + total;
+
+            messenger = sendRequest(url);
+
+            if (messenger.result === 1) {
+                Materialize.toast('Products Sold', 4000);
+            } else {
+                Materialize.toast('Product Not sold', 4000);
+            }
+        }
+        
+        
+
+        function transaction_prompt() {
+            "use strict";
+            $('#confirm_transaction').openModal({
+                dismissible: false,
+                opacity: .8,
+                in_duration: 300,
+                out_duration: 200,
+                ready: function() { console.log("modalopened"); },
+                complete: function() { console.log("modalclosed"); }
+            });
+        }
+
+
+        $('.button-collapse').sideNav({
+            menuWidth: 300, // Default is 240
+            edge: 'left', // Choose the horizontal origin
+            closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        });
+
 
         function delete_transaction_product(id) {
             //            alert(id);
@@ -239,25 +281,28 @@
                 div += '<li class="collection-item avatar">';
                 div += '<img src="img/icon.png" alt="P" class="circle">';
                 div += '<span class="title" style="font-size:20px; font-family: verdana;">' + messenger.productName + '</span>';
-                div += '<p style="font-size:15px">QTY <span class="transaction_productQuantity">1</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(' + messenger.productId + ')"><i class="fa fa-pencil-square-o fw"></i></a>';
+                div += '<p style="font-size:15px">QTY <span class="transaction_productQuantity">' + messenger.productQuantity + '</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(' + messenger.productId + ')"><i class="fa fa-pencil-square-o fw"></i></a>';
                 div += '<br> GH₵ <span class="transaction_productPrice">' + messenger.productPrice + '</span></p>';
                 div += '<a href="#!" class="secondary-content" onclick="delete_transaction_product(' + messenger.productId + ')"><i style="color:red" id="transaction_productDelete_btn" class="fa fa-trash-o fw"></i></a></li></ul>';
 
                 $("#list_of_transaction_product").prepend(div);
                 test = encodeURI(document.getElementById("total_transaction_price").textContent);
                 total = parseFloat(test) + parseFloat(messenger.productPrice);
-                $("#total_transaction_price").text(total);
+                //                var price = total.round(2);
+                $("#total_transaction_price").text(total.toFixed(2));
 
-                $(".transaction_container").each(function(index, value) {
-                    var ids = $(this).attr("id");
-//                    console.log($(this).attr('id'));
-                    alert(index+" "+value+" "+ids);
-                });
+
+                //                $(".transaction_container").each(function(index, value) {
+                //                    var ids = $(this).attr("id");
+                //                    var qty = $(this).find(".transaction_productQuantity").text();
+                //                    //                    console.log($(this).attr('id'));
+                //                    alert(index + " " + value + " Id is " + ids + " QTY is " + qty);
+                //                });
                 //                console.log(total);
 
                 //                console.log($(".transact_id").attr("id"));
             } else {
-//                $(".message").text(messenger.message);
+                //                $(".message").text(messenger.message);
                 Materialize.toast('Product Not In Inventory', 4000);
             }
 
