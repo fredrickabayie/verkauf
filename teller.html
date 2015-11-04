@@ -25,7 +25,8 @@
 
     <div class="app">
 
-        <nav>
+        <div class="navbar-fixed">
+        <nav style="background:#b83838">
 
             <ul id="slide-out" class="side-nav">
                 <li style="">
@@ -73,8 +74,8 @@
             </a>
 
         </nav>
+        </div>
         
-<!--        <div class="navbar-fixed">-->
         <div class="col s12">
             <ul class="tabs">
                 <li class="tab col s3"><a style="color:#b83838;" class="active" href="#inventory">SALES</a></li>
@@ -82,13 +83,12 @@
 
             </ul>
         </div>
-<!--        </div>-->
 
         <div id="inventory" class="col s12">
             <div class="container" id="list_of_transaction_product">
 
                 
-                <ul class="collection z-depth-2">
+                <ul class="collection z-depth-1">
                     <li class="collection-item avatar">
                         <img src="img/icon.png" alt="P" class="circle">
                         <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
@@ -110,7 +110,7 @@
                     </li>
                 </ul>
            
-                <ul class="collection z-depth-2">
+                <ul class="collection z-depth-1">
                     <li class="collection-item avatar">
                         <img src="img/icon.png" alt="P" class="circle">
                         <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
@@ -214,25 +214,25 @@
         <input type="number" class="validate" id="transact_productBarcode" />
         <div class="row">
 
-            <div class="fixed-action-btn" style="bottom: 45px; right: 24px; background: lightgrey">
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
                 <a id="float_btn" class="z-depth-2 btn-floating btn-large red floating_edit_btn">
                     <i id="menu_btn" class="fa fa-bars"></i>
                 </a>
                 <ul>
-                    <li><a href="#" class="btn-floating blue darken-1" id="transaction_productScan"><i class="fa fa-qrcode" onclick="transaction_productScan()"></i></a></li>
+                    <li><a href="#" class="btn-floating blue darken-1 btn-large" id="transaction_productScan"><i class="fa fa-qrcode fa-2x fw" onclick="transaction_productScan()"></i></a></li>
                     <li>
-                        <a class="btn-floating green"><i id="" class="fa fa-shopping-cart"></i></a>
+                        <a class="btn-floating green btn-large"><i id="" class="fa fa-shopping-cart fa-2x fw"></i></a>
                     </li>
                 </ul>
             </div>
         </div>
 
         <div class="row">
-            <div class="fixed-action-btn" style="left: 24px; bottom:45px; background: lightgrey; width: 200px">
-                <a class="btn-flat white-text text-darken-2 grey tooltipped" data-position="top" data-delay="50" data-tooltip="Total Price">GH₵ <span class="total_transaction_price" id="total_transaction_price">00.00</span></a>
+            <div id="total_cont" class="fixed-action-btn" style="left: 24px; bottom:45px; width: 200px">
+                <a class="btn-flat btn-large white-text text-darken-2 grey grey lighten-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Total Price">GH₵ <span style="color:#b83838" class="total_transaction_price" id="total_transaction_price">00.00</span></a>
             </div>
         </div>
-
+<!--<output></output>-->
     </div>
 
     <script type="text/javascript" src="cordova.js"></script>
@@ -244,11 +244,12 @@
 //        $(".button-collapse").sideNav();
         
         $('.button-collapse').sideNav({
-      menuWidth: 300, // Default is 240
-      edge: 'left', // Choose the horizontal origin
-      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    }
-  );
+//            $("#total_cont").hide();
+              menuWidth: 300, // Default is 240
+              edge: 'left', // Choose the horizontal origin
+              closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+            }
+          );
 
         function sendRequest(u) {
             "use strict";

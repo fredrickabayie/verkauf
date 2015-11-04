@@ -16,18 +16,12 @@
 <body>
     <div class="app">
 
-        <!--            <div class="navbar">-->
-
         <nav>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#!">First Sidebar Link</a></li>
-                <li><a href="#!">Second Sidebar Link</a></li>
-            </ul>
 
-            <ul style="background:lightgray" id="slide-out" class="side-nav">
-                <li style="height:150px;width:inherit; display:block">
-                    <a style="">
-                        <img style="" src="splash.png" alt="profilepic" />
+            <ul id="slide-out" class="side-nav">
+                <li style="">
+                    <a style="height:inherit;width:inherit">
+                        <img style="height:inherit;width:inherit" src="img/icon.png" alt="profilepic" />
                     </a>
                 </li>
 
@@ -186,14 +180,13 @@
     <!--        <script type="text/javascript" src="jquery.touchSwipe.min.js"></script>-->
 
     <script type="text/javascript">
-        $(".button-collapse").sideNav();
+        //        $(".button-collapse").sideNav();
 
-        //            $('.button-collapse').sideNav({
-        ////                  menuWidth: 300, // Default is 240
-        //                  edge: 'left', // Choose the horizontal origin
-        //                  closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-        //                }
-        //              );
+        $('.button-collapse').sideNav({
+            menuWidth: 300, // Default is 240
+            edge: 'left', // Choose the horizontal origin
+            closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+        });
 
 
         //             <script>
