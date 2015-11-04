@@ -199,7 +199,7 @@
 
             alert(total);
 
-            customerNumber = "0209339957";
+            customerNumber = productId = encodeURI(document.getElementById("customerNumber").value);
 
             url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=make_transaction&customerNumber=" + customerNumber + "&productId=" + store + "&total=" + total;
 
