@@ -65,7 +65,7 @@ $(function () {
         messenger = sendRequest(url);
 
         if (messenger.result === 1) {
-            window.location.replace("../home_page.html");
+            window.location.replace("home_page.html");
 
         } else if (messenger.result === 2) {
             window.location.replace("teller.html");
