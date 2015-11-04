@@ -47,7 +47,7 @@
                     <a href="#!"><i class="fa fa-ticket fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Receipts</a>
                 </li>
                 <li>
-                    <a href="#!"><i class="fa fa-users fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Tellers</a>
+                    <a href="#!"><i class="fa fa-users fa-lg fw"></i>&nbsp;&nbsp;&nbsp;&nbsp; Transactions</a>
                 </li>
                 <li>
                     <a href="#!">My account</a>
@@ -58,9 +58,11 @@
                 <li>
                     <a href="index.html"><i class="fa fa-sign-out"></i> Sign out</a>
                 </li>
+<!--
                 <li>
                     <a href="#!">Settings <i class="fa fa-cogs"></i></a>
                 </li>
+-->
                 <li>
                     <a href="#!">Help & Feedback</a>
                 </li>
@@ -71,11 +73,14 @@
             </ul>
 
             <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i>
-            </a>
+            </a> &nbsp;&nbsp;&nbsp;&nbsp;Transactions
+            
+            <a href="#" style="float:right; margin-right:10px" onclick="nextVersion ()" id="search_btn"><i class="fa fa-search"></i></a>
 
         </nav>
         </div>
         
+<!--
         <div class="col s12">
             <ul class="tabs">
                 <li class="tab col s3"><a style="color:#b83838;" class="active" href="#inventory">SALES</a></li>
@@ -83,11 +88,13 @@
 
             </ul>
         </div>
+-->
 
         <div id="inventory" class="col s12">
             <div class="container" id="list_of_transaction_product">
 
                 
+<!--
                 <ul class="collection z-depth-1">
                     <li class="collection-item avatar">
                         <img src="img/icon.png" alt="P" class="circle">
@@ -98,103 +105,14 @@
                         <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
                     </li>
                 </ul>
-                           
-                <ul class="collection z-depth-2">
-                    <li class="collection-item avatar">
-                        <img src="img/icon.png" alt="P" class="circle">
-                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
-                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
-                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
-                        </p>
-                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
-                    </li>
-                </ul>
-           
-                <ul class="collection z-depth-1">
-                    <li class="collection-item avatar">
-                        <img src="img/icon.png" alt="P" class="circle">
-                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
-                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
-                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
-                        </p>
-                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
-                    </li>
-                </ul>
-           
-                <ul class="collection z-depth-2">
-                    <li class="collection-item avatar">
-                        <img src="img/icon.png" alt="P" class="circle">
-                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
-                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
-                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
-                        </p>
-                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
-                    </li>
-                </ul>
-           
-                <ul class="collection z-depth-2">
-                    <li class="collection-item avatar">
-                        <img src="img/icon.png" alt="P" class="circle">
-                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
-                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
-                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
-                        </p>
-                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
-                    </li>
-                </ul>
-           
-                <ul class="collection z-depth-2">
-                    <li class="collection-item avatar">
-                        <img src="img/icon.png" alt="P" class="circle">
-                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
-                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
-                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
-                        </p>
-                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
-                    </li>
-                </ul>
-           
-                <ul class="collection z-depth-2">
-                    <li class="collection-item avatar">
-                        <img src="img/icon.png" alt="P" class="circle">
-                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
-                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
-                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
-                        </p>
-                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
-                    </li>
-                </ul>
-           
-                <ul class="collection z-depth-2">
-                    <li class="collection-item avatar">
-                        <img src="img/icon.png" alt="P" class="circle">
-                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
-                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
-                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
-                        </p>
-                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
-                    </li>
-                </ul>
-           
-                <ul class="collection z-depth-2">
-                    <li class="collection-item avatar">
-                        <img src="img/icon.png" alt="P" class="circle">
-                        <span class="title" style="font-size:20px; font-family: verdana">Macbook Pro</span>
-                        <p style="font-size:15px">UNIT <span class="transaction_productQuantity">5</span> &nbsp;&nbsp;&nbsp;&nbsp;<a href="#!" class="" onclick="edit_transaction_productQuantity(4)"><i class="fa fa-pencil-square-o fw"></i></a>
-                            <br> GH₵ <span class="transaction_productPrice">45.00</span>
-                        </p>
-                        <a href="#!" class="secondary-content transaction_productDelet_btn" onclick="delete_transaction_product()"><i style="color:red" class="fa fa-trash-o fw"></i></a>
-                    </li>
-                </ul>
-
-
-
+-->
 
             </div>
 
         </div>
 
-        <!--
+<!--
+        
         <div id="modal1" class="modal bottom-sheet">
             <div class="modal-content">
                 <h4 class="modal_product_name"></h4>
@@ -211,6 +129,7 @@
         </div>
 -->
 
+
         <input type="number" class="validate" id="transact_productBarcode" />
         <div class="row">
 
@@ -221,7 +140,7 @@
                 <ul>
                     <li><a href="#" class="btn-floating blue darken-1 btn-large" id="transaction_productScan"><i class="fa fa-qrcode fa-2x fw" onclick="transaction_productScan()"></i></a></li>
                     <li>
-                        <a class="btn-floating green btn-large"><i id="" class="fa fa-shopping-cart fa-2x fw"></i></a>
+                        <a class="btn-floating green btn-large" onclick="transaction_prompt()"><i id="" class="fa fa-shopping-cart fa-2x fw"></i></a>
                     </li>
                 </ul>
             </div>
@@ -242,14 +161,25 @@
 
     <script type="text/javascript">
 //        $(".button-collapse").sideNav();
+        function nextVersion () {
+//            var link += '<a href="#">verKauf Pro</a>'; 
+            Materialize.toast('Functionality available in verKauf Pro', 4000);
+        }
+        
+        
+        function transaction_prompt() {
+            "use strict";
+            alert("prompt sale");
+        }
+        
         
         $('.button-collapse').sideNav({
-//            $("#total_cont").hide();
               menuWidth: 300, // Default is 240
               edge: 'left', // Choose the horizontal origin
               closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
             }
           );
+        
 
         function sendRequest(u) {
             "use strict";
@@ -313,19 +243,22 @@
                 div += '<br> GH₵ <span class="transaction_productPrice">' + messenger.productPrice + '</span></p>';
                 div += '<a href="#!" class="secondary-content" onclick="delete_transaction_product(' + messenger.productId + ')"><i style="color:red" id="transaction_productDelete_btn" class="fa fa-trash-o fw"></i></a></li></ul>';
 
-                $("#list_of_transaction_product").append(div);
+                $("#list_of_transaction_product").prepend(div);
                 test = encodeURI(document.getElementById("total_transaction_price").textContent);
                 total = parseFloat(test) + parseFloat(messenger.productPrice);
                 $("#total_transaction_price").text(total);
 
                 $(".transaction_container").each(function(index, value) {
-                    console.log($(this).attr('id'));
+                    var ids = $(this).attr("id");
+//                    console.log($(this).attr('id'));
+                    alert(index+" "+value+" "+ids);
                 });
                 //                console.log(total);
 
                 //                console.log($(".transact_id").attr("id"));
             } else {
-                $(".message").text(messenger.message);
+//                $(".message").text(messenger.message);
+                Materialize.toast('Product Not In Inventory', 4000);
             }
 
 

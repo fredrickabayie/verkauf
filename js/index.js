@@ -72,7 +72,8 @@ $(function () {
 
             return false;
         } else {
-            $(".status").text(messenger.message);
+//            $(".status").text(messenger.message);
+            Materialize.toast('Failed to login', 4000);
         }
 
     });
