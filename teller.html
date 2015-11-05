@@ -119,13 +119,14 @@
                 <div class="input-field col s12">
                     <input id="customerNumber" type="number" class="validate" length="10" />
                     <label for="customerNumber">Customer Number</label>
-<!--                    <input id="edit_productId" type="text" class="validate" />-->
-<!--                    <label for="productName" id="edit_productId"></label>-->
+                    <a class="btn-flat white-text text-darken-2 grey grey lighten-1 tooltipped" data-position="top" data-delay="50" data-tooltip="Total Price">GH₵ <span style="color:#b83838" class="total_transaction_price" id="total_transaction_price">00.00</span></a>
+                    <!--                    <input id="edit_productId" type="text" class="validate" />-->
+                    <!--                    <label for="productName" id="edit_productId"></label>-->
                 </div>
             </div>
             <div class="modal-footer">
                 <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn" onclick="sell_products()">SELL</a>
-                <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn" style="float:left">CLOSE</a>
+                <a href="#" class=" modal-action modal-close waves-effect waves-green btn" id="update_product_price_btn" style="float:left" onclick="close_confirm_transactionModal()">CLOSE</a>
             </div>
         </div>
 
@@ -172,14 +173,20 @@
             return result;
         }
 
+
+        function close_confirm_transactionModal() {
+            $('#confirm_transaction').closeModal();
+        }
+
+
         //        $(".button-collapse").sideNav();
         function nextVersion() {
             //            var link += '<a href="#">verKauf Pro</a>'; 
             Materialize.toast('Functionality available in verKauf Pro', 4000);
         }
-        
-        
-        
+
+
+
 
         function sell_products() {
             var store, total, ids, qty, customerNumber, url, messenger;
@@ -211,18 +218,22 @@
                 Materialize.toast('Product Not sold', 4000);
             }
         }
-        
-        
+
+
 
         function transaction_prompt() {
             "use strict";
             $('#confirm_transaction').openModal({
                 dismissible: false,
-                opacity: .8,
+                opacity: .85,
                 in_duration: 300,
                 out_duration: 200,
-                ready: function() { console.log("modalopened"); },
-                complete: function() { console.log("modalclosed"); }
+                ready: function() {
+                    console.log("modalopened");
+                },
+                complete: function() {
+                    console.log("modalclosed");
+                }
             });
         }
 
