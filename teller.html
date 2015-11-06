@@ -267,17 +267,21 @@
         function edit_transaction_productQuantity(id) {
             alert(id);
         }
+        
+        $(function () {
+            $("#transaction_productId").hide();
+        });
 
 
         function transaction_productScan() {
             "use strict";
             //    $("#transaction_productId").hide();
             //                $("#transact_barcode_btn").click(function() {
-            //        cordova.plugins.barcodeScanner.scan(
-            //            function (result) {
+                    cordova.plugins.barcodeScanner.scan(
+                        function (result) {
 
             var productBarcode, url, messenger, div, test, total, sales_ids;
-            //                $("#transact_productBarcode").val(result.text);
+                            $("#transact_productBarcode").val(result.text);
             //                productBarcode = result.text;
 
             productBarcode = encodeURI(document.getElementById("transact_productBarcode").value);
@@ -318,12 +322,12 @@
             }
 
 
-            //            },
-            //            function (error) {
-            //                alert("Scanning failed: " + error);
-            //            }
-            //        );
-            //                });
+                        },
+                        function (error) {
+                            alert("Scanning failed: " + error);
+                        }
+                    );
+//                            });
         }
     </script>
 
