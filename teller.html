@@ -281,10 +281,10 @@
                         function (result) {
 
             var productBarcode, url, messenger, div, test, total, sales_ids;
-                            $("#transact_productBarcode").val(result.text);
-            //                productBarcode = result.text;
+//                            $("#transact_productBarcode").val(result.text);
+                            productBarcode = result.text;
 
-            productBarcode = encodeURI(document.getElementById("transact_productBarcode").value);
+//            productBarcode = encodeURI(document.getElementById("transact_productBarcode").value);
             //        url = "inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
 
             url = "http://cs.ashesi.edu.gh/~csashesi/class2016/fredrick-abayie/mobileweb/pointofsale_midsem_verkauf/php/inventory.php?cmd=search_for_product&productBarcode=" + productBarcode;
